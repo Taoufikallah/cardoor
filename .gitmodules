@@ -1,0 +1,3 @@
+[submodule "cardoor"]
+	path = cardoor
+	url = https://github.com/dev01yusuf/cardoor
