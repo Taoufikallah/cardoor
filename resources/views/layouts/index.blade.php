@@ -7,7 +7,6 @@
       <section class="content-header">
         <h1>
           Dashboard
-          
           <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
@@ -15,10 +14,10 @@
           <li class="active">Dashboard</li>
         </ol>
         @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
       </section>
 
       <!-- Main content -->
