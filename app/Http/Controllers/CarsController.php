@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\AjaxCrud;
+use App\Car;
 use Validator;
 
-class AjaxCrudController extends Controller
+class CarsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class AjaxCrudController extends Controller
     {
         if(request()->ajax())
         {
-            return datatables()->of(AjaxCrud::latest()->get())
+            return datatables()->of(Car::latest()->get())
                     ->addColumn('action', function($data){
                         $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-primary btn-sm">Edit</button>';
                         $button .= '&nbsp;&nbsp;';
@@ -27,7 +27,7 @@ class AjaxCrudController extends Controller
                     ->rawColumns(['action'])
                     ->make(true);
         }
-        return view('ajax_index');
+        return view('backend/cars');
     }
 
     /**
@@ -46,7 +46,7 @@ class AjaxCrudController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    /* public function store(Request $request)
     {
         $rules = array(
             'first_name'    =>  'required',
@@ -73,10 +73,10 @@ class AjaxCrudController extends Controller
             'image'             =>  $new_name
         );
 
-        AjaxCrud::create($form_data);
+        Car::create($form_data);
 
         return response()->json(['success' => 'Data Added successfully.']);
-    }
+    } */
 
     /**
      * Display the specified resource.
@@ -95,14 +95,14 @@ class AjaxCrudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+   /*  public function edit($id)
     {
         if(request()->ajax())
         {
-            $data = AjaxCrud::findOrFail($id);
+            $data = Car::findOrFail($id);
             return response()->json(['data' => $data]);
         }
-    }
+    } */
 
     /**
      * Update the specified resource in storage.
@@ -151,7 +151,7 @@ class AjaxCrudController extends Controller
             'last_name'        =>   $request->last_name,
             'image'            =>   $image_name
         );
-        AjaxCrud::whereId($request->hidden_id)->update($form_data);
+        Car::whereId($request->hidden_id)->update($form_data);
 
         return response()->json(['success' => 'Data is successfully updated']);
     }
@@ -164,7 +164,7 @@ class AjaxCrudController extends Controller
      */
     public function destroy($id)
     {
-        $data = AjaxCrud::findOrFail($id);
+        $data = Car::findOrFail($id);
         $data->delete();
     }
 }

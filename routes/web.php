@@ -11,16 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/services', 'PagesController@services');
+
+
 
 
 
 Auth::routes();
 
-Route::resource('ajax-crud', 'AjaxCrudController');
+Route::resource('backend/cars', 'CarsController');
 
-Route::post('ajax-crud/update', 'AjaxCrudController@update')->name('ajax-crud.update');
+Route::post('backend/cars/update', 'CarsController@update')->name('cars.update');
 
-Route::get('ajax-crud/destroy/{id}', 'AjaxCrudController@destroy');
+Route::get('backend/cars/destroy/{id}', 'CarsController@destroy');

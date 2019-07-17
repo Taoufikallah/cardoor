@@ -35,65 +35,68 @@
   </div>
  </body>
 </html>
+
 <div id="formModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-     <div class="modal-content">
-      <div class="modal-header">
-             <button type="button" class="close" data-dismiss="modal">&times;</button>
-             <h4 class="modal-title">Add New Record</h4>
-           </div>
-           <div class="modal-body">
-            <span id="form_result"></span>
-            <form method="post" id="sample_form" class="form-horizontal" enctype="multipart/form-data">
-             @csrf
-             <div class="form-group">
-               <label class="control-label col-md-4" >First Name : </label>
-               <div class="col-md-8">
-                <input type="text" name="first_name" id="first_name" class="form-control" />
-               </div>
-              </div>
-              <div class="form-group">
-               <label class="control-label col-md-4">Last Name : </label>
-               <div class="col-md-8">
-                <input type="text" name="last_name" id="last_name" class="form-control" />
-               </div>
-              </div>
-              <div class="form-group">
-               <label class="control-label col-md-4">Select Profile Image : </label>
-               <div class="col-md-8">
-                <input type="file" name="image" id="image" />
-                <span id="store_image"></span>
-               </div>
-              </div>
-              <br />
-              <div class="form-group" align="center">
-               <input type="hidden" name="action" id="action" />
-               <input type="hidden" name="hidden_id" id="hidden_id" />
-               <input type="submit" name="action_button" id="action_button" class="btn btn-warning" value="Add" />
-              </div>
-            </form>
-           </div>
+ <div class="modal-dialog">
+  <div class="modal-content">
+   <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Record</h4>
         </div>
-       </div>
-   </div>
-   
-   <div id="confirmModal" class="modal fade" role="dialog">
-       <div class="modal-dialog">
-           <div class="modal-content">
-               <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                   <h2 class="modal-title">Confirmation</h2>
-               </div>
-               <div class="modal-body">
-                   <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
-               </div>
-               <div class="modal-footer">
-                <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
-                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-               </div>
+        <div class="modal-body">
+         <span id="form_result"></span>
+         <form method="post" id="sample_form" class="form-horizontal" enctype="multipart/form-data">
+          @csrf
+          <div class="form-group">
+            <label class="control-label col-md-4" >First Name : </label>
+            <div class="col-md-8">
+             <input type="text" name="first_name" id="first_name" class="form-control" />
+            </div>
            </div>
-       </div>
-   </div>
+           <div class="form-group">
+            <label class="control-label col-md-4">Last Name : </label>
+            <div class="col-md-8">
+             <input type="text" name="last_name" id="last_name" class="form-control" />
+            </div>
+           </div>
+           <div class="form-group">
+            <label class="control-label col-md-4">Select Profile Image : </label>
+            <div class="col-md-8">
+             <input type="file" name="image" id="image" />
+             <span id="store_image"></span>
+            </div>
+           </div>
+           <br />
+           <div class="form-group" align="center">
+            <input type="hidden" name="action" id="action" />
+            <input type="hidden" name="hidden_id" id="hidden_id" />
+            <input type="submit" name="action_button" id="action_button" class="btn btn-warning" value="Add" />
+           </div>
+         </form>
+        </div>
+     </div>
+    </div>
+</div>
+
+<div id="confirmModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">Confirmation</h2>
+            </div>
+            <div class="modal-body">
+                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+            </div>
+            <div class="modal-footer">
+             <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
 $(document).ready(function(){
 
@@ -101,7 +104,7 @@ $(document).ready(function(){
   processing: true,
   serverSide: true,
   ajax:{
-   url: "{{ route('ajax-crud.index') }}",
+   url: "{{ route('cars.index') }}",
   },
   columns:[
    {
@@ -140,7 +143,7 @@ $(document).ready(function(){
   if($('#action').val() == 'Add')
   {
    $.ajax({
-    url:"{{ route('ajax-crud.store') }}",
+    url:"{{ route('cars.store') }}",
     method:"POST",
     data: new FormData(this),
     contentType: false,
@@ -173,7 +176,7 @@ $(document).ready(function(){
   if($('#action').val() == "Edit")
   {
    $.ajax({
-    url:"{{ route('ajax-crud.update') }}",
+    url:"{{ route('cars.update') }}",
     method:"POST",
     data:new FormData(this),
     contentType: false,
@@ -209,7 +212,7 @@ $(document).ready(function(){
   var id = $(this).attr('id');
   $('#form_result').html('');
   $.ajax({
-   url:"/ajax-crud/"+id+"/edit",
+   url:"/cars/"+id+"/edit",
    dataType:"json",
    success:function(html){
     $('#first_name').val(html.data.first_name);
@@ -234,7 +237,7 @@ $(document).ready(function(){
 
  $('#ok_button').click(function(){
   $.ajax({
-   url:"ajax-crud/destroy/"+user_id,
+   url:"cars/destroy/"+user_id,
    beforeSend:function(){
     $('#ok_button').text('Deleting...');
    },
