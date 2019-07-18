@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         /* collective\view\ViewServiceProvider::class, */
         Yajra\Datatables\DatatablesServiceProvider::class,
+        JeroenNoten\LaravelAdminLte\ServiceProvider::class,
 
         /*
          * Package Service Providers...

@@ -8,9 +8,9 @@ class PagesController extends Controller
 {
     public function index(){
         $title ='welcome to cardoor!!';
-        /* return view('frontend/pages.index', compact('title')); */
-        $cars = Car::orderBy('title','asc')->paginate(2);
-        return view('frontend/pages.index')->with('cars',$cars);
+        return view('frontend/pages.index', compact('title'));
+        /* $cars = Car::orderBy('title','asc')->paginate(2); */
+       /*  return view('frontend/pages.index')->with('cars',$cars); */
     }
     public function about(){
         return view('frontend/pages.about');

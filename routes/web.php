@@ -21,6 +21,24 @@ Route::get('/services', 'PagesController@services');
 
 Auth::routes();
 
+Route::group(['middleware' => 'auth'], function(){
+
+    Route::get('/dashboard', function(){
+
+        return view('dashboard');
+
+    })->name('dashboard');;
+
+    Route::get('/dashboard', function(){
+
+        return view('admin/dashboard');
+
+    })->name('dashboard');
+});
+
+
+Route::get('admin/user' ,'UserController@index');
+
 Route::resource('backend/cars', 'CarsController');
 
 Route::post('backend/cars/update', 'CarsController@update')->name('cars.update');
