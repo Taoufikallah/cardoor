@@ -35,9 +35,12 @@ Route::group(['middleware' => 'auth'], function(){
 
     })->name('dashboard');
 });
-
+/* Route::get('/admin', 'HomeController@index'->('home');
+ */
 
 Route::get('admin/user' ,'UserController@index');
+Route::get('admin/user/newEmail', 'UserController@newEmail')->name('newEmail');
+
 
 Route::resource('backend/cars', 'CarsController');
 

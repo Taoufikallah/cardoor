@@ -65,7 +65,7 @@
                                 <div class="portlet-body form">
                                     <div class="row">
                                         <div class="col-md-6">
-                                        <form  action="{{route('newEmail')}}" method="post" role="form" class="form-horizontal">
+                                        <form  action="{{route('newEmail')}}" method="post" class="form-horizontal">
                                                 <div class="form-body">
                                                     <div class="form-group form-md-line-input">
                                                         <label class="col-md-3 control-label" for="[object Object]">New Email</label>
@@ -77,9 +77,9 @@
                                                     <div class="form-group form-md-line-input">
                                                             <label class="col-md-3 control-label" for="[object Object]">Current Password </label>
                                                             <div class="col-md-9">
-                                                                <input type="password" class="form-control" name="password" value="">
+                                                                <input type="password" class="form-control" name="currentPassword"  value="">
                                                                 <div class="form-control-focus"></div>
-                                                                {{-- <span class="help-block">Old Password</span> --}}
+                                                                <span class="help-block">Old Password</span>
                                                             </div>
                                                         </div>
                                                 </div>
