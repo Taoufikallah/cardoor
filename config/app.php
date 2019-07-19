@@ -161,10 +161,11 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        /* collective\view\ViewServiceProvider::class, */
+        
         Yajra\Datatables\DatatablesServiceProvider::class,
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
-
+        Intervention\Image\ImageServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -228,10 +229,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        /* 'Form' => Illuminate\html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class, */
+        'Form' => Illuminate\html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
-
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

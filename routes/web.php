@@ -42,8 +42,12 @@ Route::get('admin/user' ,'UserController@index');
 Route::get('admin/user/newEmail', 'UserController@newEmail')->name('newEmail');
 
 
-Route::resource('backend/cars', 'CarsController');
+Route::get('admin/cars', 'CarController@index');
+Route::get('admin/cars/single{id}', 'CarController@show')->name('car.single');
+Route::get('admin/cars/create/post', 'CarController@create')->name('post.create');
 
+/* Route::get('admin/cars/store/post', 'CarController@store')->name('post.store');
+ */
 Route::post('backend/cars/update', 'CarsController@update')->name('cars.update');
 
 Route::get('backend/cars/destroy/{id}', 'CarsController@destroy');

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Car;
+use App\Post;
 use Validator;
 
-class CarsController extends Controller
+class CarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,19 +15,8 @@ class CarsController extends Controller
      */
     public function index()
     {
-        if(request()->ajax())
-        {
-            return datatables()->of(Car::latest()->get())
-                    ->addColumn('action', function($data){
-                        $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-primary btn-sm">Edit</button>';
-                        $button .= '&nbsp;&nbsp;';
-                        $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
-                        return $button;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
-        }
-        return view('backend/cars');
+        $car = Post::all();
+        return view('admin\cars\index', compact('car'));
     }
 
     /**
@@ -37,7 +26,8 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        $car = Post::all();
+        return view('admin/cars/create', compact('car'));
     }
 
     /**
@@ -46,37 +36,20 @@ class CarsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    /* public function store(Request $request)
+    public function store(Request $request)
     {
-        $rules = array(
-            'first_name'    =>  'required',
-            'last_name'     =>  'required',
-            'image'         =>  'required|image|max:2048'
-        );
+       '$this'->validate($request, array(
+           'title' => 'required|max:255',
+           'body'=> 'required'
+       ));
 
-        $error = Validator::make($request->all(), $rules);
+       $car = new Post;
+       $car->title = $request->title;
+       $car->body = $request->body;
+       $car->save();
 
-        if($error->fails())
-        {
-            return response()->json(['errors' => $error->errors()->all()]);
-        }
-
-        $image = $request->file('image');
-
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-
-        $image->move(public_path('images'), $new_name);
-
-        $form_data = array(
-            'first_name'        =>  $request->first_name,
-            'last_name'         =>  $request->last_name,
-            'image'             =>  $new_name
-        );
-
-        Car::create($form_data);
-
-        return response()->json(['success' => 'Data Added successfully.']);
-    } */
+       return redirect()->route('admin');
+    }
 
     /**
      * Display the specified resource.
@@ -86,7 +59,8 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        //
+        $car = Post::find($id);
+        return view('admin/cars/single', compact('car'));
     }
 
     /**
