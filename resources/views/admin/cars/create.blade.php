@@ -1,4 +1,4 @@
-@extends('backend/layouts.app')
+@extends('adminlte::page')
 
 @section('content')
     <div class="container">
@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                {!! Form::open(array('route' => 'store.post' , 'data-parsley-validate' => '')) !!}
+                {!! Form::open(array('action' => 'CarController@store' , 'data-parsley-validate' => '')) !!}
                 
                     {{ Form::label('title', 'Title') }}
                     {{ Form::text('title', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}

@@ -38,7 +38,7 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-       '$this'->validate($request, array(
+       $this->validate($request, array(
            'title' => 'required|max:255',
            'body'=> 'required'
        ));
@@ -60,7 +60,7 @@ class CarController extends Controller
     public function show($id)
     {
         $car = Post::find($id);
-        return view('admin/cars/single', compact('car'));
+        return view('admin/cars/show', compact('car'));
     }
 
     /**
