@@ -14,6 +14,7 @@
                         <th>#</th>
                         <th>Title</th>
                         <th>Body</th>
+                        <th>Image</th>
                         <th>create at</th>
                     <th class="text-center" width="130px"><a href="{{ route('post.create') }}" class="btn btn-primary btn-sm"><i class="glyphicon-plus"></i></a></th>
                     </thead>
@@ -24,6 +25,8 @@
                                 <th>{{ $no++ }}</th>
                                 <td>{{ $value->title }}</td>
                                 <td>{{ substr($value->body, 0, 40) }} {{ strlen($value->body) > 40 ? '....' : ""}}</td>
+                                
+                                <td><img style="width:100%" src="/storage/app/public/cover_images/{{$value->cover_image}}"></td>
                                 <td>{{ date(' M j Y', strtotime($value->created_at)) }}</td>
                                 <td>
                                     <a href="{{ route('post.show', $value->id) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open "></span></a>

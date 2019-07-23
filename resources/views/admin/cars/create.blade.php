@@ -9,14 +9,14 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                {!! Form::open(array('action' => 'CarController@store' , 'data-parsley-validate' => '')) !!}
+               {!! Form::open(['action' => 'CarController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                 
                     {{ Form::label('title', 'Title') }}
                     {{ Form::text('title', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
 
                     {{ Form::label('body', 'Body') }}
                     {{ Form::textarea('body', NULL, array('class' => 'form-control' , 'required' => '')) }}
-
+                    {{Form::file('cover_image')}}
                     {{ Form::submit('Add Car', array('class' => 'btn btn-success btn-lg btn-block', 'style'=> 'margin-top:20px')) }}
 
 
