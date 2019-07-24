@@ -42,6 +42,10 @@ class CarController extends Controller
        $this->validate($request, array(
            'title' => 'required|max:255',
            'body'=> 'required',
+           'price'=> 'required',
+           'fuel'=> 'required',
+           'year'=> 'required',
+           'gearbox'=> 'required',
            'cover_image' => 'image|nullable|max:1999'
        ));
 
@@ -64,6 +68,10 @@ class CarController extends Controller
        $car = new Post;
        $car->title = $request->title;
        $car->body = $request->body;
+       $car->price = $request->price;
+       $car->fuel = $request->fuel;
+       $car->year = $request->year;
+       $car->gearbox = $request->gearbox;
        $car->cover_image = $fileNameToStore;
        $car->save();
 
@@ -88,14 +96,11 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   /*  public function edit($id)
+    public function edit($id)
     {
-        if(request()->ajax())
-        {
-            $data = Car::findOrFail($id);
-            return response()->json(['data' => $data]);
-        }
-    } */
+        $car = Post::find($id);
+        return view('admin/cars/edit', compact('car'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -105,49 +110,40 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
-    {
-        $image_name = $request->hidden_image;
-        $image = $request->file('image');
-        if($image != '')
+    
         {
-            $rules = array(
-                'first_name'    =>  'required',
-                'last_name'     =>  'required',
-                'image'         =>  'image|max:2048'
-            );
-            $error = Validator::make($request->all(), $rules);
-            if($error->fails())
-            {
-                return response()->json(['errors' => $error->errors()->all()]);
+            $this->validate($request, [
+                'title' => 'required|max:255',
+                'body'=> 'required',
+                'cover_image' => 'image|nullable|max:1999'
+            ]);
+    
+             // Handle File Upload
+            if($request->hasFile('cover_image')){
+                // Get filename with the extension
+                $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+                // Get just filename
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                // Get just ext
+                $extension = $request->file('cover_image')->getClientOriginalExtension();
+                // Filename to store
+                $fileNameToStore= $filename.'_'.time().'.'.$extension;
+                // Upload Image
+                $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
             }
-
-            $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $image_name);
-        }
-        else
-        {
-            $rules = array(
-                'first_name'    =>  'required',
-                'last_name'     =>  'required'
-            );
-
-            $error = Validator::make($request->all(), $rules);
-
-            if($error->fails())
-            {
-                return response()->json(['errors' => $error->errors()->all()]);
+    
+            // Create Post
+            $car = Post::find($id);
+            $car->title = $request->input('title');
+            $car->body = $request->input('body');
+            if($request->hasFile('cover_image')){
+                $car->cover_image = $fileNameToStore;
             }
+            $car->save();
+    
+            return redirect('/posts')->with('success', 'Post Updated');
         }
-
-        $form_data = array(
-            'first_name'       =>   $request->first_name,
-            'last_name'        =>   $request->last_name,
-            'image'            =>   $image_name
-        );
-        Car::whereId($request->hidden_id)->update($form_data);
-
-        return response()->json(['success' => 'Data is successfully updated']);
-    }
+    
 
     /**
      * Remove the specified resource from storage.

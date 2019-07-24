@@ -48,6 +48,8 @@ Route::get('admin/cars/create/post', 'CarController@create')->name('post.create'
 Route::POST('admin/cars/store/post', 'CarController@store')->name('post.store');
 
 Route::get('admin/cars/show/post/{id}', 'CarController@show')->name('post.show');
+Route::get('admin/cars/edit/post/{id}', 'CarController@edit')->name('post.edit');
+Route::POST('admin/cars/update/post/{id}', 'CarController@update')->name('post.update');
 
 
 

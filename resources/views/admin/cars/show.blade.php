@@ -9,6 +9,7 @@
         <div class="row">
             <div class="col-md-8">
                 <p class="lead">{{ $car->body }}</p>
+                <img style="width:100%" src="/storage/app/public/cover_images/{{$car->cover_image}}">
             </div>
             <div class="col-md-4">
                 <div class="well">
