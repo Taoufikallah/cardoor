@@ -46,7 +46,10 @@ class CarController extends Controller
            'price'=> 'required',
            'fuel'=> 'required',
            'year'=> 'required',
-           'gearbox'=> 'required',
+           'color'=> 'required',
+           'fiscal_power'=> 'required',
+           'number_doors'=> 'required',
+           'number_places'=> 'required',
            'cover_image' => 'image|nullable|max:1999'
        ));
 
@@ -72,6 +75,11 @@ class CarController extends Controller
        $car->price = $request->price;
        $car->fuel = $request->fuel;
        $car->year = $request->year;
+       $car->color = $request->color;
+       $car->fiscal_power = $request->fiscal_power;
+       $car->number_doors = $request->number_doors;
+       $car->number_places = $request->number_places;
+
        $car->gearbox = $request->gearbox;
        $car->cover_image = $fileNameToStore;
        $car->save();
@@ -122,6 +130,10 @@ class CarController extends Controller
            'fuel'=> 'required',
            'year'=> 'required',
            'gearbox'=> 'required',
+           'color'=> 'required',
+           'fiscal_power'=> 'required',
+           'number_doors'=> 'required',
+           'number_places'=> 'required',
            'cover_image' => 'image|nullable|max:1999'
         ));
 
@@ -147,6 +159,10 @@ class CarController extends Controller
         $car->price = $request->price;
         $car->fuel = $request->fuel;
         $car->year = $request->year;
+        $car->color = $request->color;
+        $car->fiscal_power = $request->fiscal_power;
+        $car->number_doors = $request->number_doors;
+        $car->number_places = $request->number_places;
         $car->gearbox = $request->gearbox;
         $car->cover_image = $fileNameToStore;
 

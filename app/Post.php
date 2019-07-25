@@ -10,6 +10,6 @@ class Post extends Model
 
     public function brand()
     {
-        return $this->hasMany('App\Comment');
+        return $this->belongsTo(Post::class);
     }
 }

@@ -60,7 +60,7 @@ Route::get('admin/booking', 'BookingController@index')->name('booking');
 
 Route::get('admin/clients', 'ClientController@index')->name('admin');
 
-Route::get('frontend/clients/create/post', 'ClientController@create')->name('post.create');
+Route::get('frontend/clients/create/post', 'ClientController@create')->name('client.create');
 Route::POST('admin/clients/store/post', 'ClientController@store')->name('post.store');
 
 

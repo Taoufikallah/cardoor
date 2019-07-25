@@ -20,6 +20,10 @@ class CreatePostsTable extends Migration
             $table->string('price');
             $table->string('fuel');
             $table->string('year');
+            $table->string('color');
+            $table->string('fiscal_power');
+            $table->string('number_doors');
+            $table->string('number_places');
             $table->string('gearbox');
             $table->timestamps();
         });
