@@ -5,11 +5,12 @@
                 <div class="container">
                     <div class="row">
                         <!-- Single Footer Widget Start -->
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-6 col-md-6">
                             <div class="single-footer-widget">
                                 <h2>About Us</h2>
                                 <div class="widget-body">
-                                    <img src="assets/img/logo.png" alt="JSOFT">
+                                        
+                                    <img src="{{asset('assets/img/logo.png') }}" alt="JSOFT">
                                     <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit. Nobis magni assumenda distinctio debitis, eum fuga fugiat error reiciendis.</p>
     
                                     <div class="newsletter-area">
@@ -24,44 +25,10 @@
                         </div>
                         <!-- Single Footer Widget End -->
     
-                        <!-- Single Footer Widget Start -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-footer-widget">
-                                <h2>Recent Posts</h2>
-                                <div class="widget-body">
-                                    <ul class="recent-post">
-                                        <li>
-                                            <a href="#">
-                                               Hello Bangladesh! 
-                                               <i class="fa fa-long-arrow-right"></i>
-                                           </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                              Lorem ipsum dolor sit amet
-                                               <i class="fa fa-long-arrow-right"></i>
-                                           </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                               Hello Bangladesh! 
-                                               <i class="fa fa-long-arrow-right"></i>
-                                           </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                consectetur adipisicing elit?
-                                               <i class="fa fa-long-arrow-right"></i>
-                                           </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Footer Widget End -->
+                        
     
                         <!-- Single Footer Widget Start -->
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-6 col-md-6">
                             <div class="single-footer-widget">
                                 <h2>get touch</h2>
                                 <div class="widget-body">

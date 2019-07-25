@@ -33,7 +33,7 @@
                                 <td>{{ $value->fuel }}</td>
                                 <td>{{ $value->year }}</td>
                                 <td>{{ $value->gearbox }}</td>
-                                <td><img style="width:100%" src="{{url('/storage/app/public/cover_images/'.$value->cover_image)}}"></td>
+                                <td><img style="width:100%" src="{{asset('app/cover_images/'.$value->cover_image)}}"></td>
                                 <td>{{ date(' M j Y', strtotime($value->created_at)) }}</td>
                                 
                                 <td>

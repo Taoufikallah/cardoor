@@ -5,31 +5,28 @@
             <div class="container">
                 <div class="row">
                     <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-left">
+                    <div class="col-lg-4 text-left">
                         <i class="fa fa-map-marker"></i> 802/2, Mirpur, Dhaka
                     </div>
                     <!--== Single HeaderTop End ==-->
 
-                    <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-center">
-                        <i class="fa fa-mobile"></i> +1 800 345 678
-                    </div>
-                    <!--== Single HeaderTop End ==-->
+                    
 
                     <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-center">
-                        <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                    <div class="col-lg-4 text-center">
+                            <i class="fa fa-mobile"></i> +1 800 345 678
                     </div>
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
+                    <div class="col-lg-4 text-right">
+                            <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                        {{-- <div class="header-social-icons">
                             <a href="#"><i class="fa fa-behance"></i></a>
                             <a href="#"><i class="fa fa-pinterest"></i></a>
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
+                        </div> --}}
                     </div>
                     <!--== Social Icons End ==-->
                 </div>
@@ -43,7 +40,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index2.html" class="logo">
+                        <a href="/" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -62,7 +59,7 @@
                                 <li><a href="/cars">Cars</a>
                                     
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="/contact">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

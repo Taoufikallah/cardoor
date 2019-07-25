@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
-use DB;
-use Validator;
+use App\post;
+use Storage;
+
+use Image;
 
 class CarController extends Controller
 {
@@ -77,6 +78,7 @@ class CarController extends Controller
 
        return redirect()->route('admin');
     }
+    
 
     /**
      * Display the specified resource.
@@ -109,41 +111,49 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
-    
-        {
-            $this->validate($request, [
-                'title' => 'required|max:255',
-                'body'=> 'required',
-                'cover_image' => 'image|nullable|max:1999'
-            ]);
-    
-             // Handle File Upload
-            if($request->hasFile('cover_image')){
-                // Get filename with the extension
-                $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
-                // Get just filename
-                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                // Get just ext
-                $extension = $request->file('cover_image')->getClientOriginalExtension();
-                // Filename to store
-                $fileNameToStore= $filename.'_'.time().'.'.$extension;
-                // Upload Image
-                $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
-            }
-    
-            // Create Post
-            $car = Post::find($id);
-            $car->title = $request->input('title');
-            $car->body = $request->input('body');
-            if($request->hasFile('cover_image')){
-                $car->cover_image = $fileNameToStore;
-            }
-            $car->save();
-    
-            return redirect('/posts')->with('success', 'Post Updated');
+    public function update(Request $request, $id)
+    {
+        $car = Post::find($id);
+
+        $this->validate($request, array(
+            'title' => 'required|max:255',
+           'body'=> 'required',
+           'price'=> 'required',
+           'fuel'=> 'required',
+           'year'=> 'required',
+           'gearbox'=> 'required',
+           'cover_image' => 'image|nullable|max:1999'
+        ));
+
+        // Handle File Upload
+       if($request->hasFile('cover_image')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
         }
-    
+        $car = Post::find($id);
+
+        $car->title = $request->title;
+        $car->body = $request->body;
+        $car->price = $request->price;
+        $car->fuel = $request->fuel;
+        $car->year = $request->year;
+        $car->gearbox = $request->gearbox;
+        $car->cover_image = $fileNameToStore;
+
+        $car->save();
+
+        return redirect()->route('admin');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -153,7 +163,8 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        $data = Car::findOrFail($id);
-        $data->delete();
+        $car = Post::find($id);
+        $car->delete();
+        return redirect()->route('admin');
     }
 }

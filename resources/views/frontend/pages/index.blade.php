@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('frontend/layouts.app')
 
 @section('content')
     <!--== SlideshowBg Area Start ==-->
@@ -288,6 +288,86 @@
         </section>
         <!--== Services Area End ==-->
     
+        <!--== Pricing Area Start ==-->
+        <section id="pricing-area" class="section-padding overlay">
+                <div class="container">
+                    <div class="row">
+                        <!-- Section Title Start -->
+                        <div class="col-lg-12">
+                            <div class="section-title  text-center">
+                                <h2>Only quality for clients</h2>
+                                <span class="title-line"><i class="fa fa-car"></i></span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <!-- Section Title End -->
+                    </div>
+        
+                    <!-- Pricing Table Conatent Start -->
+                    <div class="row">
+                        <!-- Single Pricing Table -->
+                        <div class="col-lg-4 col-md-6 text-center">
+                            <div class="single-pricing-table">
+                                <h3>BUSINESS</h3>
+                                <h2>$ 55.99</h2>
+                                <h5>PER MONTH</h5>
+        
+                                <ul class="package-list">
+                                    <li>FREE VEHICLE DELIVERY</li>
+                                    <li>WEDDINGS CELEBRATIONS</li>
+                                    <li>FULL INSURANCE INCLUDED</li>
+                                    <li>TRANSPORT ABROAD</li>
+                                    <li>ALL INCLUSIVE MINI BAR</li>
+                                    <li>CHAUFFER INCLUDED IN PRICE</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Single Pricing Table -->
+        
+                        <!-- Single Pricing Table -->
+                        <div class="col-lg-4 col-md-6 text-center">
+                            <div class="single-pricing-table">
+                                <h3>Trial</h3>
+                                <h2>Free</h2>
+                                <h5>PER MONTH</h5>
+        
+                                <ul class="package-list">
+                                    <li>FREE VEHICLE DELIVERY</li>
+                                    <li>OTHER CELEBRATIONS</li>
+                                    <li>FULL INSURANCE</li>
+                                    <li>TRANSPORT ABROAD</li>
+                                    <li>MINI BAR</li>
+                                    <li>INCLUDED IN PRICE</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Single Pricing Table -->
+        
+                        <!-- Single Pricing Table -->
+                        <div class="col-lg-4 col-md-6 text-center">
+                            <div class="single-pricing-table">
+                                <h3>standard</h3>
+                                <h2>$ 35.99</h2>
+                                <h5>PER MONTH</h5>
+        
+                                <ul class="package-list">
+                                    <li>DELIVERY AT AIRPORT</li>
+                                    <li>WEDDINGS AND OTHER</li>
+                                    <li>FULL INCLUDED</li>
+                                    <li>TRANSPORT ABROAD</li>
+                                    <li>ALL MINI BAR</li>
+                                    <li>CHAUFFER PRICE</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Single Pricing Table -->
+                    </div>
+                    <!-- Pricing Table Conatent End -->
+                </div>
+            </section>
+            <!--== Pricing Area End ==-->
+    
+            
         <!--== Fun Fact Area Start ==-->
         <section id="funfact-area" class="overlay section-padding">
             <div class="container">
@@ -500,266 +580,6 @@
         </section>
         <!--== Choose Car Area End ==-->
     
-        <!--== Pricing Area Start ==-->
-        <section id="pricing-area" class="section-padding overlay">
-            <div class="container">
-                <div class="row">
-                    <!-- Section Title Start -->
-                    <div class="col-lg-12">
-                        <div class="section-title  text-center">
-                            <h2>Only quality for clients</h2>
-                            <span class="title-line"><i class="fa fa-car"></i></span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-    
-                <!-- Pricing Table Conatent Start -->
-                <div class="row">
-                    <!-- Single Pricing Table -->
-                    <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-pricing-table">
-                            <h3>BUSINESS</h3>
-                            <h2>$ 55.99</h2>
-                            <h5>PER MONTH</h5>
-    
-                            <ul class="package-list">
-                                <li>FREE VEHICLE DELIVERY</li>
-                                <li>WEDDINGS CELEBRATIONS</li>
-                                <li>FULL INSURANCE INCLUDED</li>
-                                <li>TRANSPORT ABROAD</li>
-                                <li>ALL INCLUSIVE MINI BAR</li>
-                                <li>CHAUFFER INCLUDED IN PRICE</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Single Pricing Table -->
-    
-                    <!-- Single Pricing Table -->
-                    <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-pricing-table">
-                            <h3>Trial</h3>
-                            <h2>Free</h2>
-                            <h5>PER MONTH</h5>
-    
-                            <ul class="package-list">
-                                <li>FREE VEHICLE DELIVERY</li>
-                                <li>OTHER CELEBRATIONS</li>
-                                <li>FULL INSURANCE</li>
-                                <li>TRANSPORT ABROAD</li>
-                                <li>MINI BAR</li>
-                                <li>INCLUDED IN PRICE</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Single Pricing Table -->
-    
-                    <!-- Single Pricing Table -->
-                    <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-pricing-table">
-                            <h3>standard</h3>
-                            <h2>$ 35.99</h2>
-                            <h5>PER MONTH</h5>
-    
-                            <ul class="package-list">
-                                <li>DELIVERY AT AIRPORT</li>
-                                <li>WEDDINGS AND OTHER</li>
-                                <li>FULL INCLUDED</li>
-                                <li>TRANSPORT ABROAD</li>
-                                <li>ALL MINI BAR</li>
-                                <li>CHAUFFER PRICE</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Single Pricing Table -->
-                </div>
-                <!-- Pricing Table Conatent End -->
-            </div>
-        </section>
-        <!--== Pricing Area End ==-->
-    
-        <!--== Team Area Start ==-->
-        <section id="team-area" class="section-padding">
-            <div class="container">
-                <div class="row">
-                    <!-- Section Title Start -->
-                    <div class="col-lg-12">
-                        <div class="section-title  text-center">
-                            <h2>Our Creative Persons</h2>
-                            <span class="title-line"><i class="fa fa-car"></i></span>
-                            <p>Lorem ipsum dolor sit amet elit.</p>
-                        </div>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-    
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="team-content">
-                            <div class="row">
-                                <!-- Team Tab Menu start -->
-                                <div class="col-lg-4">
-                                    <div class="team-tab-menu">
-                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="tab_item_1" data-toggle="tab" href="#team_member_1" role="tab" aria-selected="true">
-                                                    <div class="team-mem-icon">
-                                                        <img src="assets/img/team/team-mem-thumb-1.png" alt="JSOFT">
-                                                    </div>
-                                                    <h5>Raju Ahammad</h5>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="tab_item_2" data-toggle="tab" href="#team_member_2" role="tab" aria-selected="true">
-                                                    <div class="team-mem-icon">
-                                                        <img src="assets/img/team/team-mem-thumb-3.png" alt="JSOFT">
-                                                    </div>
-                                                    <h5>Vongchong Smith</h5>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="tab_item_3" data-toggle="tab" href="#team_member_3" role="tab" aria-selected="true">
-                                                    <div class="team-mem-icon">
-                                                        <img src="assets/img/team/team-mem-thumb-2.png" alt="JSOFT">
-                                                    </div>
-                                                    <h5>Alex Tuntuni</h5>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="tab_item_4" data-toggle="tab" href="#team_member_4" role="tab" aria-selected="true">
-                                                    <div class="team-mem-icon">
-                                                        <img src="assets/img/team/team-mem-thumb-4.png" alt="JSOFT">
-                                                    </div>
-                                                    <h5>Any Anderssen</h5>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- Team Tab Menu End -->
-    
-                                <!-- Team Tab Content start -->
-                                <div class="col-lg-8">
-                                    <div class="tab-content" id="myTabContent">
-                                        <!-- Single Team  start -->
-                                        <div class="tab-pane fade show active" id="team_member_1" role="tabpanel" aria-labelledby="tab_item_1">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="team-member-pro-pic">
-                                                        <img src="assets/img/team/team-mem-1.png" alt="JSOFT">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="team-member-info text-center">
-                                                        <h4>Raju Ahammad</h4>
-                                                        <h5>Developer</h5>
-                                                        <span class="quote-icon"><i class="fa fa-quote-left"></i></span>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin fermentum dolor. Nunc nec augue urna. Cras varius orci vitae lacinia efficitur.</p>
-                                                        <div class="team-social-icon">
-                                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                                                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single Team  End -->
-    
-                                        <!-- Single Team  start -->
-                                        <div class="tab-pane fade" id="team_member_2" role="tabpanel" aria-labelledby="tab_item_2">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="team-member-pro-pic">
-                                                        <img src="assets/img/team/team-mem-3.png" alt="JSOFT">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="team-member-info text-center">
-                                                        <h4>Vongchong Smith</h4>
-                                                        <h5>Designer</h5>
-                                                        <span class="quote-icon"><i class="fa fa-quote-left"></i></span>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin fermentum dolor. Nunc nec augue urna. Cras varius orci vitae lacinia efficitur.</p>
-                                                        <div class="team-social-icon">
-                                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                                                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single Team  End -->
-    
-                                        <!-- Single Team  start -->
-                                        <div class="tab-pane fade" id="team_member_3" role="tabpanel" aria-labelledby="tab_item_3">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="team-member-pro-pic">
-                                                        <img src="assets/img/team/team-mem-2.png" alt="JSOFT">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="team-member-info text-center">
-                                                        <h4>Alex Tuntuni</h4>
-                                                        <h5>Marketer</h5>
-                                                        <span class="quote-icon"><i class="fa fa-quote-left"></i></span>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin fermentum dolor. Nunc nec augue urna. Cras varius orci vitae lacinia efficitur.</p>
-                                                        <div class="team-social-icon">
-                                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                                                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single Team  End -->
-    
-                                        <!-- Single Team  start -->
-                                        <div class="tab-pane fade" id="team_member_4" role="tabpanel" aria-labelledby="tab_item_4">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="team-member-pro-pic">
-                                                        <img src="assets/img/team/team-mem-4.png" alt="JSOFT">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="team-member-info text-center">
-                                                        <h4>Any Anderssen</h4>
-                                                        <h5>Manager</h5>
-                                                        <span class="quote-icon"><i class="fa fa-quote-left"></i></span>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin fermentum dolor. Nunc nec augue urna. Cras varius orci vitae lacinia efficitur.</p>
-                                                        <div class="team-social-icon">
-                                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                                                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single Team  End -->
-                                    </div>
-                                </div>
-                                <!-- Team Tab Content End -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--== Team Area End ==-->
-    
         <!--== Mobile App Area Start ==-->
         <div id="mobileapp-video-bg"></div>
         <section id="mobile-app-area">
@@ -780,148 +600,5 @@
         </section>
         <!--== Mobile App Area End ==-->
     
-        <!--== Articles Area Start ==-->
-        <section id="tips-article-area" class="section-padding">
-            <div class="container">
-                <div class="row">
-                    <!-- Section Title Start -->
-                    <div class="col-lg-12">
-                        <div class="section-title  text-center">
-                            <h2>Tips and articles</h2>
-                            <span class="title-line"><i class="fa fa-car"></i></span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-    
-                <!-- Articles Content Wrap Start -->
-                <div class="row">
-                    <!-- Single Articles Start -->
-                    <div class="col-lg-12">
-                        <article class="single-article">
-                            <div class="row">
-                                <!-- Articles Thumbnail Start -->
-                                <div class="col-lg-5">
-                                    <div class="article-thumb">
-                                        <img src="assets/img/article/arti-thumb-1.jpg" alt="JSOFT">
-                                    </div>
-                                </div>
-                                <!-- Articles Thumbnail End -->
-    
-                                <!-- Articles Content Start -->
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="article-body">
-                                                <h3><a href="article-details.html">Wliquam sit amet urna eullam</a></h3>
-                                                <div class="article-meta">
-                                                    <a href="#" class="author">By :: <span>Admin</span></a>
-                                                    <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                                </div>
-    
-                                                <div class="article-date">25 <span class="month">jan</span></div>
-    
-                                                <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-    
-                                                <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Articles Content End -->
-                            </div>
-                        </article>
-                    </div>
-                    <!-- Single Articles End -->
-    
-                    <!-- Single Articles Start -->
-                    <div class="col-lg-12">
-                        <article class="single-article middle">
-                            <div class="row">
-    
-                                <!-- Articles Thumbnail Start -->
-                                <div class="col-lg-5 d-xl-none">
-                                    <div class="article-thumb">
-                                        <img src="assets/img/article/arti-thumb-2.jpg" alt="JSOFT">
-                                    </div>
-                                </div>
-                                <!-- Articles Thumbnail End -->
-    
-                                <!-- Articles Content Start -->
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="article-body">
-                                                <h3><a href="article-details.html">fringilla oremedad ipsum dolor sit</a></h3>
-                                                <div class="article-meta">
-                                                    <a href="#" class="author">By :: <span>Admin</span></a>
-                                                    <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                                </div>
-    
-                                                <div class="article-date">14<span class="month">feb</span></div>
-    
-                                                <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-    
-                                                <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Articles Content End -->
-    
-                                <!-- Articles Thumbnail Start -->
-                                <div class="col-lg-5 d-none d-xl-block">
-                                    <div class="article-thumb">
-                                        <img src="assets/img/article/arti-thumb-2.jpg" alt="JSOFT">
-                                    </div>
-                                </div>
-                                <!-- Articles Thumbnail End -->
-                            </div>
-                        </article>
-                    </div>
-                    <!-- Single Articles End -->
-    
-                    <!-- Single Articles Start -->
-                    <div class="col-lg-12">
-                        <article class="single-article">
-                            <div class="row">
-                                <!-- Articles Thumbnail Start -->
-                                <div class="col-lg-5">
-                                    <div class="article-thumb">
-                                        <img src="assets/img/article/arti-thumb-3.jpg" alt="JSOFT">
-                                    </div>
-                                </div>
-                                <!-- Articles Thumbnail End -->
-    
-                                <!-- Articles Content Start -->
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="article-body">
-                                                <h3><a href="article-details.html">Tempored incididunt ut labore</a></h3>
-                                                <div class="article-meta">
-                                                    <a href="#" class="author">By :: <span>Admin</span></a>
-                                                    <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                                </div>
-    
-                                                <div class="article-date">17 <span class="month">feb</span></div>
-    
-                                                <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-    
-                                                <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Articles Content End -->
-                            </div>
-                        </article>
-                    </div>
-                    <!-- Single Articles End -->
-                </div>
-                <!-- Articles Content Wrap End -->
-            </div>
-        </section>
-        <!--== Articles Area End ==-->
+      
 @endsection

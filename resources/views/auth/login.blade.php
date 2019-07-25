@@ -1,6 +1,6 @@
 @extends('adminlte::login')
 
-@section('content') --}}
+@section('content') 
 
 
 <div class="container">

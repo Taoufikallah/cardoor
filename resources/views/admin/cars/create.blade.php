@@ -15,7 +15,7 @@
                     {{ Form::text('title', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
 
                     {{ Form::label('body', 'Body') }}
-                    {{ Form::textarea('body', NULL, array('class' => 'form-control' , 'required' => '')) }}
+                    {{ Form::textarea('body', NULL, array( 'id' => 'article-ckeditor', 'class' => 'form-control' , 'required' => '')) }}
 
                     {{ Form::label('price', 'Price') }}
                     {{ Form::text('price', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
@@ -40,7 +40,10 @@
             </div>
         </div>
     </div>
-    
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
 
 
 @endsection

@@ -18,4 +18,10 @@ class PagesController extends Controller
     public function services(){
         return view('frontend/pages.services');
     }
+    public function cars(){
+        return view('frontend/pages.cars');
+    }
+    public function contact(){
+        return view('frontend/pages.contact');
+    }
 }

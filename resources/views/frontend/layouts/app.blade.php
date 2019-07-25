@@ -34,9 +34,7 @@
     </head>
     <body {{-- class="loader-active" --}}>
         @include('frontend/includes.header')
-            <div class="container">
                 @yield('content')
-            </div>
 
         @include('frontend/includes.footer')
         <!--== Scroll Top Area Start ==-->

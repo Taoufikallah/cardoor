@@ -17,10 +17,27 @@
                     {{ Form::text('title', NULL, ['Class' => 'form-control input-lg']) }}
                 
                     {{ Form::label('body', 'Body:', ['class' => 'form-spacing-top']) }}
-                    {{ Form::textarea('body', NULL, ['class' => 'Form-control']) }}
+                    {{ Form::textarea('body', NULL, ['id' => 'article-ckeditor', 'class' => 'Form-control']) }}
 
-                    {{-- {{ Form::label('price', 'Price:')}}
-                    {{ Form::text('price', NULL, ['Class' => 'form-control input-lg']) }} --}}
+                    {{ Form::label('price', 'Price:')}}
+                    {{ Form::text('price', NULL, ['Class' => 'form-control input-lg']) }}
+                   
+                    <br>
+                    {{ Form::label('fuel', 'Fuel') }}
+                    {!! Form::select('fuel', array('G' => 'Gasoline', '' => 'Diesel'), 'D'); !!}
+                    
+                    <br><br>
+                    {{ Form::label('year', 'Year') }}
+                    {{ Form::text('year', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+                    <br><br>
+                    {{ Form::label('gearbox', 'Gearbox') }}
+                    {!! Form::select('gearbox', array('M' => 'manual', '' => 'Automatic'), 'A')  !!}
+                    <br><br>
+                    {{ Form::label('cover_image','Upload Image:')}}
+                    {{Form::file('cover_image')}}
+
+
+                    
                 </div>
                 <div class="col-md-4">
                     <div class="well">
@@ -48,4 +65,8 @@
             </div>
             {!! Form::close() !!}
         </div>
+        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
 @endsection

@@ -14,6 +14,8 @@
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
+Route::get('/cars', 'PagesController@cars');
+Route::get('/contact', 'PagesController@contact');
 
 
 
@@ -23,17 +25,17 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){
 
-    Route::get('/dashboard', function(){
+    Route::get('/admin', function(){
 
-        return view('dashboard');
+        return view('admin');
 
-    })->name('dashboard');;
+    })->name('admin');;
 
-    Route::get('/dashboard', function(){
+    Route::get('/admin', function(){
 
-        return view('admin/dashboard');
+        return view('admin/admin');
 
-    })->name('dashboard');
+    })->name('admin');
 });
 /* Route::get('/admin', 'HomeController@index'->('home');
  */
@@ -52,6 +54,14 @@ Route::get('admin/cars/edit/post/{id}', 'CarController@edit')->name('post.edit')
 Route::POST('admin/cars/update/post/{id}', 'CarController@update')->name('post.update');
 
 
+Route::get('admin/booking', 'BookingController@index')->name('booking');
+
+
+
+Route::get('admin/clients', 'ClientController@index')->name('admin');
+
+Route::get('frontend/clients/create/post', 'ClientController@create')->name('post.create');
+Route::POST('admin/clients/store/post', 'ClientController@store')->name('post.store');
 
 
 
