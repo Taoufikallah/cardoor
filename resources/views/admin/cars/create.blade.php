@@ -24,9 +24,9 @@
                         {{ Form::text('price', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
                     </div>
                     
-                    <div>
+                    <div class="form-group">
                         {{ Form::label('fuel', 'Fuel') }}
-                        {!! Form::select('fuel', array('G' => 'Gasoline', '' => 'Diesel'), 'D'); !!}
+                        {!! Form::select('fuel', array('G' => 'Gasoline', '' => 'Diesel'), 'D', ['class' => 'form-control' ]); !!}
                     </div>
                     
                     <div class="form-group">
@@ -53,19 +53,19 @@
                                                   '20' => ' 2019',
                                                   
                                                 ],
-                                                   1 , ['id' =>'year']) 
+                                                   1 , ['id' =>'year','class' => 'form-control']) 
                                                    }}
                     </div>
 
                     <div class="form-group">
                         {{ Form::label('gearbox', 'Gearbox') }}
-                        {!! Form::select('gearbox', array('M' => 'manual', '' => 'Automatic'), 'A')  !!}
+                        {!! Form::select('gearbox', array('M' => 'manual', '' => 'Automatic'), 'A', ['class' => 'form-control' ])  !!}
                     </div>
                     
                     
                     <div class="form-group">
                         {{ Form::label('number_doors', 'Number doors') }}
-                        {{ Form::select ('number_doors', ['1' => ' ', '2' => ' 2'], 2 , ['id' =>'number_doors']) }}
+                        {{ Form::select ('number_doors', ['1' => ' ', '2' => ' 2'], 2 , ['id' =>'number_doors','class' => 'form-control']) }}
                     </div>
 
                     <div class="form-group">
@@ -79,7 +79,7 @@
                                                             '8' => ' 7',
                                                             '8' => ' 8',
                                                             '9' => ' 9'],
-                                                            2 , ['id' =>'select']) }}
+                                                            2 , ['id' =>'select','class' => 'form-control']) }}
                     </div>
                     
                     <div class="form-group">
@@ -95,10 +95,8 @@
                                                   '5' => ' TOYOTA',  
                                                   '6' => ' VOLKSWAGEN', 
                                                   '7' => ' VOLVO', 
-                                                  
-                                                  
                                                 ],
-                                                   1 , ['id' =>'brand']) 
+                                                   1 , ['id' =>'brand','class' => 'form-control']) 
                                                    }}
                     </div>
                         {{ Form::submit('Add Car', array('class' => 'btn btn-success btn-lg btn-block', 'style'=> 'margin-top:20px')) }}
