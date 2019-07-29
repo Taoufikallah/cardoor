@@ -86,6 +86,21 @@
                         {{ Form::label('cover_image','Upload Image:')}}
                         {{Form::file('cover_image')}}
                     </div>
+                    <div class="form-group">
+                        {{ Form::label('brand', 'Brand') }}
+                        {{ Form::select ('brand', ['1' => 'DACIA ', 
+                                                  '2' => ' FORD', 
+                                                  '3' => ' HONDA', 
+                                                  '4' => ' HYUNDAI',
+                                                  '5' => ' TOYOTA',  
+                                                  '6' => ' VOLKSWAGEN', 
+                                                  '7' => ' VOLVO', 
+                                                  
+                                                  
+                                                ],
+                                                   1 , ['id' =>'brand']) 
+                                                   }}
+                    </div>
                         {{ Form::submit('Add Car', array('class' => 'btn btn-success btn-lg btn-block', 'style'=> 'margin-top:20px')) }}
 
 

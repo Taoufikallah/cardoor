@@ -19,6 +19,7 @@
                         <th>Year</th>
                         <th>Gearbox</th>
                         <th>Image</th>
+                        <th>Brand</th>
                         <th>create at</th>
                     <th class="text-center" width="130px"><a href="{{ route('post.create') }}" class="btn btn-primary btn-sm"><i class="glyphicon-plus"></i></a></th>
                     </thead>
@@ -33,6 +34,10 @@
                                 <td>{{ $value->fuel }}</td>
                                 <td>{{ $value->year }}</td>
                                 <td>{{ $value->gearbox }}</td>
+                                <td>{{ $value->cover_image }}</td>
+                                <td>{{ $value->brand }}</td>
+                                <td>{{ $value->gearbox }}</td>
+
                                 <td><img style="width:100%" src="{{asset('app/cover_images/'.$value->cover_image)}}"></td>
                                 <td>{{ date(' M j Y', strtotime($value->created_at)) }}</td>
                                 
