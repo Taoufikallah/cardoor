@@ -18,10 +18,11 @@
                         <th>Fuel</th>
                         <th>Color</th>
                         <th>Year</th>
-                        <th>Gearbox</th>
                         <th>Fiscal Power</th>
                         <th>Number Doors</th>
                         <th>Number Places</th>
+                        <th>Gearbox</th>
+                        <th>Brand</th>
                         <th>Image</th>
                         <th>create at</th>
                     <th class="text-center" width="130px"><a href="{{ route('post.create') }}" class="btn btn-primary btn-sm"><i class="glyphicon-plus"></i></a></th>
@@ -41,7 +42,7 @@
                                 <td>{{ $value->number_doors }}</td>
                                 <td>{{ $value->number_places }}</td>
                                 <td>{{ $value->gearbox }}</td>
-
+                                <td>{{ $value->brand_id }}</td>
                                 <td><img style="width:100%" src="{{asset('app/cover_images/'.$value->cover_image)}}"></td>
                                 <td>{{ date(' M j Y', strtotime($value->created_at)) }}</td>
                                 

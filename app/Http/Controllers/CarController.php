@@ -51,6 +51,7 @@ class CarController extends Controller
            'number_doors'=> 'required',
            'number_places'=> 'required',
            'gearbox'=> 'required',
+           'brand_id'=> 'required',
            'cover_image' => 'image|nullable|max:1999'
        ));
 
@@ -81,6 +82,7 @@ class CarController extends Controller
        $car->number_doors = $request->number_doors;
        $car->number_places = $request->number_places;
        $car->gearbox = $request->gearbox;
+       $car->brand_id = $request->brand_id;
        $car->cover_image = $fileNameToStore;
        
        $car->save();
