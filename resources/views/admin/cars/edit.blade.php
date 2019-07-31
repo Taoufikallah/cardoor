@@ -26,7 +26,7 @@
                     {{ Form::label('fuel', 'Fuel') }}
                     {!! Form::select('fuel', array('G' => 'Gasoline', '' => 'Diesel'), 'D'); !!}
                     
-                    <br><br>
+                    {{-- <br><br>
                     {{ Form::label('year', 'Year') }}
                     {{ Form::text('year', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
                     <br><br>
@@ -34,7 +34,7 @@
                     {!! Form::select('gearbox', array('M' => 'manual', '' => 'Automatic'), 'A')  !!}
                     <br><br>
                     {{ Form::label('cover_image','Upload Image:')}}
-                    {{Form::file('cover_image')}}
+                    {{Form::file('cover_image')}} --}}
 
 
                     

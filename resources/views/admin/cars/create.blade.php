@@ -24,11 +24,33 @@
                         {{ Form::text('price', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
                     </div>
                     
+                    
                     <div class="form-group">
                         {{ Form::label('fuel', 'Fuel') }}
-                        {!! Form::select('fuel', array('G' => 'Gasoline', '' => 'Diesel'), 'D', ['class' => 'form-control' ]); !!}
+                        {!! Form::select('fuel', array('G' => 'Gasoline', 'D' => 'Diesel'), 'D', ['class' => 'form-control' ]); !!}
                     </div>
-                    
+                    <div class="form-group">
+                        {{ Form::label('color', 'Color') }}
+                        {{ Form::select ('color', ['1' => 'ARGENT', 
+                                                  '2' => 'BEIGE', 
+                                                  '3' => 'BLANC', 
+                                                  '4' => 'BLANC CASSé',
+                                                  '5' => 'BLEU',  
+                                                  '6' => 'BORDEAUX', 
+                                                  '7' => 'GRIS', 
+                                                  '8' => 'IVOIRE', 
+                                                  '9' => 'JAUNE', 
+                                                  '10' => 'MARRON',
+                                                  '11' => 'NOIR',
+                                                  '12' => 'ROSE',
+                                                  '13' => 'VERT',
+                                                  '14' => 'VIOLET',
+                                                  
+                                                  
+                                                ],
+                                                   1 , ['id' =>'color','class' => 'form-control']) 
+                                                   }}
+                    </div>
                     <div class="form-group">
                         {{ Form::label('year', 'Year') }}
                         {{ Form::select ('year', ['1' => '2000 ', 
@@ -59,7 +81,7 @@
 
                     <div class="form-group">
                         {{ Form::label('gearbox', 'Gearbox') }}
-                        {!! Form::select('gearbox', array('M' => 'manual', '' => 'Automatic'), 'A', ['class' => 'form-control' ])  !!}
+                        {!! Form::select('gearbox', array('M' => 'manual', 'A' => 'Automatic'), 'A', ['class' => 'form-control' ])  !!}
                     </div>
                     
                     
@@ -86,7 +108,7 @@
                         {{ Form::label('cover_image','Upload Image:')}}
                         {{Form::file('cover_image')}}
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         {{ Form::label('brand', 'Brand') }}
                         {{ Form::select ('brand', ['1' => 'DACIA ', 
                                                   '2' => ' FORD', 
@@ -99,7 +121,21 @@
                                                    1 , ['id' =>'brand','class' => 'form-control']) 
                                                    }}
                     </div>
-                        {{ Form::submit('Add Car', array('class' => 'btn btn-success btn-lg btn-block', 'style'=> 'margin-top:20px')) }}
+                    <div class="form-group">
+                        {{ Form::label('model', 'Model') }}
+                        {{ Form::select ('model', ['1' => 'DACIA ', 
+                                                  '2' => ' FORD', 
+                                                  '3' => ' HONDA', 
+                                                  '4' => ' HYUNDAI',
+                                                  '5' => ' TOYOTA',  
+                                                  '6' => ' VOLKSWAGEN', 
+                                                  '7' => ' VOLVO', 
+                                                ],
+                                                   1 , ['id' =>'brand','class' => 'form-control']) 
+                                                   }}
+                    </div> --}}
+
+                    {{ Form::submit('Add Car', array('class' => 'btn btn-success btn-lg btn-block', 'style'=> 'margin-top:20px')) }}
 
 
                 {!! Form::close() !!}
