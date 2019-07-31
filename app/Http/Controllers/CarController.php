@@ -75,8 +75,8 @@ class CarController extends Controller
        $car->body = $request->body;
        $car->price = $request->price;
        $car->fuel = $request->fuel;
-       $car->year = $request->year;
        $car->color = $request->color;
+       $car->year = $request->year;
        $car->fiscal_power = $request->fiscal_power;
        $car->number_doors = $request->number_doors;
        $car->number_places = $request->number_places;
@@ -126,18 +126,18 @@ class CarController extends Controller
 
         $this->validate($request, array(
             'title' => 'required|max:255',
-           'body'=> 'required',
-           'price'=> 'required',
-           'fuel'=> 'required',
-           /* 'year'=> 'required',
-           'gearbox'=> 'required',
-           'color'=> 'required',
-           'fiscal_power'=> 'required',
-           'number_doors'=> 'required',
-           'number_places'=> 'required', */
-           'cover_image' => 'image|nullable|max:1999'
+            'body'=> 'required',
+            'price'=> 'required',
+            'fuel'=> 'required',
+            'year'=> 'required',
+            'color'=> 'required',
+            'fiscal_power'=> 'required',
+            'number_doors'=> 'required',
+            'number_places'=> 'required',
+            'gearbox'=> 'required',
+            'cover_image' => 'image|nullable|max:1999'
         ));
-
+        $car = Post::find($id);
         // Handle File Upload
        if($request->hasFile('cover_image')){
             // Get filename with the extension
@@ -153,21 +153,19 @@ class CarController extends Controller
         } else {
             $fileNameToStore = 'noimage.jpg';
         }
-        $car = Post::find($id);
+        
 
-        $car->title = $request->title;
-        $car->body = $request->body;
-        $car->price = $request->price;
-        $car->fuel = $request->fuel;
-        /* $car->year = $request->year;
-        $car->color = $request->color;
-        $car->fiscal_power = $request->fiscal_power;
-        $car->number_doors = $request->number_doors;
-        $car->number_places = $request->number_places;
-        $car->gearbox = $request->gearbox; */
-        if($request->hasFile('cover_image')){
-            $post->cover_image = $fileNameToStore;
-        }
+       $car->title = $request->title;
+       $car->body = $request->body;
+       $car->price = $request->price;
+       $car->fuel = $request->fuel;
+       $car->color = $request->color;
+       $car->year = $request->year;
+       $car->fiscal_power = $request->fiscal_power;
+       $car->number_doors = $request->number_doors;
+       $car->number_places = $request->number_places;
+       $car->gearbox = $request->gearbox;
+       $car->cover_image = $fileNameToStore;
 
         $car->save();
 

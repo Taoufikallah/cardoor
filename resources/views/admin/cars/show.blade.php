@@ -8,8 +8,51 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <p class="lead">{{ $car->body }}</p>
-                <img style="width:100%" src="/storage/app/public/cover_images/{{$car->cover_image}}">
+                <div class="form-group">
+                    <label for="">Description</label>
+                    <p class="lead">{{ $car->body }}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Price</label>
+                    <p class="lead">{{ $car->price }}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Fuel</label>
+                    <p class="lead">{{ $car->fuel }}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Color</label>
+                    <p class="lead">{{ $car->color }}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Year</label>
+                    <p class="lead">{{ $car->year }}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Fiscal Power</label>
+                    <p class="lead">{{ $car->fiscal_power }}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Number Doors</label>
+                    <p class="lead">{{ $car->number_doors }}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Number Places</label>
+                    <p class="lead">{{ $car->number_places }}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Gearbox</label>
+                    <p class="lead">{{ $car->gearbox }}</p>
+                </div>
+                
             </div>
             <div class="col-md-4">
                 <div class="well">

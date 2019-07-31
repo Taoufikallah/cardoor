@@ -8,7 +8,17 @@
             </div>
         </div>
         <div class="row">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="col-md-12">
+                {{-- Create Form Car--}}
                {!! Form::open(['action' => 'CarController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                     <div class="form-group">
                         {{ Form::label('title', 'Title') }}
@@ -27,7 +37,7 @@
                     
                     <div class="form-group">
                         {{ Form::label('fuel', 'Fuel') }}
-                        {!! Form::select('fuel', array('G' => 'Gasoline', 'D' => 'Diesel'), 'D', ['class' => 'form-control' ]); !!}
+                        {!! Form::select('fuel', array('Gasoline' => 'Gasoline', 'Diesel' => 'Diesel'), 'Diesel', ['class' => 'form-control' ]); !!}
                     </div>
                     <div class="form-group">
                         {{ Form::label('color', 'Color') }}
@@ -81,13 +91,26 @@
 
                     <div class="form-group">
                         {{ Form::label('gearbox', 'Gearbox') }}
-                        {!! Form::select('gearbox', array('M' => 'manual', 'A' => 'Automatic'), 'A', ['class' => 'form-control' ])  !!}
+                        {!! Form::select('gearbox', array('Manual' => 'manual', 'Automatic' => 'Automatic'), 'A', ['class' => 'form-control' ])  !!}
                     </div>
                     
-                    
+                    <div class="form-group">
+                            {{ Form::label('fiscal_power', 'Fiscal Power') }}
+                            {{ Form::select ('fiscal_power', ['1' => ' ',
+                                                               '2' => ' 2',
+                                                                '3' => ' 3',
+                                                                '4' => ' 4',
+                                                                '5' => ' 5',
+                                                                '6' => ' 6',
+                                                                '8' => ' 7',
+                                                                '8' => ' 8',
+                                                                '9' => ' 9'],
+                                                                2 , ['id' =>'select','class' => 'form-control']) }}
+                        </div>
+
                     <div class="form-group">
                         {{ Form::label('number_doors', 'Number doors') }}
-                        {{ Form::select ('number_doors', ['1' => ' ', '2' => ' 2'], 2 , ['id' =>'number_doors','class' => 'form-control']) }}
+                        {{ Form::select ('number_doors', ['1' => ' ', '2' => ' 2', '2' => ' 3', '3' => ' 4', '4' => ' '], 2 , ['id' =>'number_doors','class' => 'form-control']) }}
                     </div>
 
                     <div class="form-group">
@@ -108,33 +131,7 @@
                         {{ Form::label('cover_image','Upload Image:')}}
                         {{Form::file('cover_image')}}
                     </div>
-                    {{-- <div class="form-group">
-                        {{ Form::label('brand', 'Brand') }}
-                        {{ Form::select ('brand', ['1' => 'DACIA ', 
-                                                  '2' => ' FORD', 
-                                                  '3' => ' HONDA', 
-                                                  '4' => ' HYUNDAI',
-                                                  '5' => ' TOYOTA',  
-                                                  '6' => ' VOLKSWAGEN', 
-                                                  '7' => ' VOLVO', 
-                                                ],
-                                                   1 , ['id' =>'brand','class' => 'form-control']) 
-                                                   }}
-                    </div>
-                    <div class="form-group">
-                        {{ Form::label('model', 'Model') }}
-                        {{ Form::select ('model', ['1' => 'DACIA ', 
-                                                  '2' => ' FORD', 
-                                                  '3' => ' HONDA', 
-                                                  '4' => ' HYUNDAI',
-                                                  '5' => ' TOYOTA',  
-                                                  '6' => ' VOLKSWAGEN', 
-                                                  '7' => ' VOLVO', 
-                                                ],
-                                                   1 , ['id' =>'brand','class' => 'form-control']) 
-                                                   }}
-                    </div> --}}
-
+                    
                     {{ Form::submit('Add Car', array('class' => 'btn btn-success btn-lg btn-block', 'style'=> 'margin-top:20px')) }}
 
 
