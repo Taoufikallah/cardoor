@@ -25,7 +25,7 @@
                         <th>Brand</th>
                         <th>Image</th>
                         <th>create at</th>
-                    <th class="text-center" width="130px"><a href="{{ route('post.create') }}" class="btn btn-primary btn-sm"><i class="glyphicon-plus"></i></a></th>
+                    <th class="text-center" width="130px"><a href="{{ route('post.create') }}" class="btn btn-primary btn-sm">Create</a></th>
                     </thead>
                     <tbody>
                         <?php $no=1 ?>

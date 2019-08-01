@@ -14,7 +14,7 @@
                         <th>#</th>
                         <th>Brand</th>
                         <th>create at</th>
-                    <th class="text-center" width="130px"><a href="{{ route('brand.create') }}" class="btn btn-primary btn-sm"><i class="glyphicon-plus"></i></a></th>
+                    <th class="text-center" width="130px"><a href="{{ route('brand.create') }}" class="btn btn-primary btn-sm">Create</a></th>
                     </thead>
                     <tbody>
                         <?php $no=1 ?>

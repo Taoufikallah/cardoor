@@ -15,6 +15,6 @@ class Brand extends Model
 
     public function posts() 
     {
-        return $this->hasMany('App\Post');
+        return $this->hasMany(Post::class);
     }
 }

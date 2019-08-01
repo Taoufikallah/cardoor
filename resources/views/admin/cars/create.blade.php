@@ -134,6 +134,7 @@
                     </div>
                     <div class="form-group">
                         {{ Form::label('brand_id', 'Brand') }}
+                       
                         {{ Form::select ('brand_id', ['1' => ' ',
                                                            'AUDI' => ' AUDI',
                                                             'BMW' => ' BMW',
