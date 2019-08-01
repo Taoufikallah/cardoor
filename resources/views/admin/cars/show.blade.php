@@ -52,7 +52,13 @@
                     <label for="">Gearbox</label>
                     <p class="lead">{{ $car->gearbox }}</p>
                 </div>
-                
+                <div class="form-group">
+                        <label for="">Brand</label>
+                        <p class="lead"> @if($car->brand !== null)         
+                                  {{  $car->brand->name }}
+                                  @endif
+                        </p>
+                    </div>
             </div>
             <div class="col-md-4">
                 <div class="well">

@@ -19,6 +19,7 @@ class CarController extends Controller
     public function index()
     {
         $car = Post::all();
+        /* dd($car);exit; */
         return view('admin\cars\index', compact('car'));
     }
 
@@ -30,7 +31,9 @@ class CarController extends Controller
     public function create()
     {
         $car = Post::all();
-        return view('admin/cars/create', compact('car'));
+        $brands =  Brand::pluck('name', 'id');
+    
+        return view('admin/cars/create', compact('car', 'brands'));
     }
 
     /**
@@ -113,7 +116,8 @@ class CarController extends Controller
     public function edit($id)
     {
         $car = Post::find($id);
-        return view('admin/cars/edit', compact('car'));
+        $brands =  Brand::pluck('name', 'id');
+        return view('admin/cars/edit', compact('car','brands'));
     }
 
     /**
@@ -138,6 +142,7 @@ class CarController extends Controller
             'number_doors'=> 'required',
             'number_places'=> 'required',
             'gearbox'=> 'required',
+            'brand_id'=> 'required',
             'cover_image' => 'image|nullable|max:1999'
         ));
         $car = Post::find($id);
@@ -168,6 +173,7 @@ class CarController extends Controller
        $car->number_doors = $request->number_doors;
        $car->number_places = $request->number_places;
        $car->gearbox = $request->gearbox;
+       $car->brand_id = $request->brand_id;
        $car->cover_image = $fileNameToStore;
 
         $car->save();

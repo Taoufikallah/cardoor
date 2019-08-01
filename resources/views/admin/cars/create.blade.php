@@ -135,16 +135,7 @@
                     <div class="form-group">
                         {{ Form::label('brand_id', 'Brand') }}
                        
-                        {{ Form::select ('brand_id', ['1' => ' ',
-                                                           'AUDI' => ' AUDI',
-                                                            'BMW' => ' BMW',
-                                                            'CHEVROLET' => ' CHEVROLET',
-                                                            'CITROEN' => ' CITROEN',
-                                                            'DACIA' => ' DACIA',
-                                                            'FORD' => ' FORD',
-                                                            'HONDA' => ' HONDA',
-                                                            'SKODA' => ' SKODA'],
-                                                            1 , ['id' =>'select','class' => 'form-control']) }}
+                        {{ Form::select ('brand_id', $brands, null , ['id' =>'select','class' => 'form-control']) }}
                     </div>
                     
                     <div class="form-group">

@@ -30,6 +30,7 @@
                     <tbody>
                         <?php $no=1 ?>
                         @foreach ($car as $key => $value)
+                        
                             <tr>
                                 <th>{{ $no++ }}</th>
                                 <td>{{ $value->title }}</td>
@@ -42,7 +43,12 @@
                                 <td>{{ $value->number_doors }}</td>
                                 <td>{{ $value->number_places }}</td>
                                 <td>{{ $value->gearbox }}</td>
-                                <td>{{ $value->brand_id }}</td>
+                                <td>
+                                  @if($value->brand !== null)         
+                                    {{  $value->brand->name }}
+                                    @endif
+                                </td>
+                                {{-- <td > {{dd($value)}}</td> --}}
                                 <td><img style="width:100%" src="{{asset('app/cover_images/'.$value->cover_image)}}"></td>
                                 <td>{{ date(' M j Y', strtotime($value->created_at)) }}</td>
                                 

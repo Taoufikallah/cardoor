@@ -119,7 +119,11 @@
                                                             '9' => ' 9'],
                                                             2 , ['id' =>'select','class' => 'form-control']) }}
                     </div>
-                    
+                    <div class="form-group">
+                        {{ Form::label('brand_id', 'Brand') }}
+                       
+                        {{ Form::select ('brand_id', $brands, $car->brand->id , ['id' =>'select','class' => 'form-control']) }}
+                    </div>
                     <div class="form-group">
                         {{ Form::label('cover_image','Upload Image:')}}
                         {{Form::file('cover_image')}}
