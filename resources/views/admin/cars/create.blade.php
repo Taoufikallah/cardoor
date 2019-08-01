@@ -41,21 +41,19 @@
                     </div>
                     <div class="form-group">
                         {{ Form::label('color', 'Color') }}
-                        {{ Form::select ('color', ['1' => 'ARGENT', 
-                                                  '2' => 'BEIGE', 
-                                                  '3' => 'BLANC', 
-                                                  '4' => 'BLANC CASSé',
-                                                  '5' => 'BLEU',  
-                                                  '6' => 'BORDEAUX', 
-                                                  '7' => 'GRIS', 
-                                                  '8' => 'IVOIRE', 
-                                                  '9' => 'JAUNE', 
-                                                  '10' => 'MARRON',
-                                                  '11' => 'NOIR',
-                                                  '12' => 'ROSE',
-                                                  '13' => 'VERT',
-                                                  '14' => 'VIOLET',
-                                                  
+                        {{ Form::select ('color', ['ARGENT' => 'ARGENT', 
+                                                  'BEIGE' => 'BEIGE', 
+                                                  'BLANC' => 'BLANC', 
+                                                  'BLEU' => 'BLEU',  
+                                                  'BORDEAUX' => 'BORDEAUX', 
+                                                  'GRIS' => 'GRIS', 
+                                                  'IVOIRE' => 'IVOIRE', 
+                                                  'JAUNE' => 'JAUNE', 
+                                                  'MARRON' => 'MARRON',
+                                                  'NOIR' => 'NOIR',
+                                                  'ROSE' => 'ROSE',
+                                                  'VERT' => 'VERT',
+                                                  'VIOLET' => 'VIOLET',
                                                   
                                                 ],
                                                    1 , ['id' =>'color','class' => 'form-control']) 
@@ -63,26 +61,26 @@
                     </div>
                     <div class="form-group">
                         {{ Form::label('year', 'Year') }}
-                        {{ Form::select ('year', ['1' => '2000 ', 
-                                                  '2' => ' 2001', 
-                                                  '3' => ' 2002', 
-                                                  '4' => ' 2003',
-                                                  '5' => ' 2004',  
-                                                  '6' => ' 2005', 
-                                                  '7' => ' 2006', 
-                                                  '8' => ' 2007', 
-                                                  '9' => ' 2008', 
-                                                  '10' => ' 2009',
-                                                  '11' => ' 2010',
-                                                  '12' => ' 2011',
-                                                  '13' => ' 2012',
-                                                  '14' => ' 2013',
-                                                  '15' => ' 2014',
-                                                  '16' => ' 2015',
-                                                  '17' => ' 2016',
-                                                  '18' => ' 2017',
-                                                  '19' => ' 2018',
-                                                  '20' => ' 2019',
+                        {{ Form::select ('year', ['2000' => '2000 ', 
+                                                  '2001' => '2001 ', 
+                                                  '2002' => '2002 ', 
+                                                  '2003' => '2003 ',
+                                                  '2004' => '2004 ',  
+                                                  '2005' => '2005 ', 
+                                                  '2006' => '2006 ', 
+                                                  '2007' => '2007 ', 
+                                                  '2008' => '2008 ', 
+                                                  '2009' => '2009 ',
+                                                  '2010' => '2010 ',
+                                                  '2011' => '2011 ',
+                                                  '2012' => '2012 ',
+                                                  '2013' => '2013 ',
+                                                  '2014' => '2014 ',
+                                                  '2015' => '2015 ',
+                                                  '2016' => '2016 ',
+                                                  '2017' => '2017 ',
+                                                  '2018' => '2018 ',
+                                                  '2019' => '2019 ',
                                                   
                                                 ],
                                                    1 , ['id' =>'year','class' => 'form-control']) 
@@ -91,7 +89,9 @@
 
                     <div class="form-group">
                         {{ Form::label('gearbox', 'Gearbox') }}
-                        {!! Form::select('gearbox', array('Manual' => 'manual', 'Automatic' => 'Automatic'), 'A', ['class' => 'form-control' ])  !!}
+                        {!! Form::select('gearbox', array('Manual' => 'manual',
+                                                          'Automatic' => 'Automatic'),
+                                                           'A', ['class' => 'form-control' ])  !!}
                     </div>
                     
                     <div class="form-group">
@@ -110,7 +110,13 @@
 
                     <div class="form-group">
                         {{ Form::label('number_doors', 'Number doors') }}
-                        {{ Form::select ('number_doors', ['1' => ' ', '2' => ' 2', '2' => ' 3', '3' => ' 4', '4' => ' '], 2 , ['id' =>'number_doors','class' => 'form-control']) }}
+                        {{ Form::select ('number_doors', ['1' => ' ', 
+                                                          '2' => ' 2',
+                                                           '3' => ' 3',
+                                                            '4' => ' 4',
+                                                             '5' => '5 '], 2 , 
+                                                             ['id' =>'number_doors',
+                                                             'class' => 'form-control']) }}
                     </div>
 
                     <div class="form-group">
