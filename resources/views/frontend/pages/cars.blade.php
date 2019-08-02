@@ -28,23 +28,30 @@
                         <div class="car-list-content">
                             <div class="row">
                                 <!-- Single Car Start -->
+                                <?php $no=1 ?>
+                                     @foreach ($car as $key => $value)
                                 <div class="col-lg-6 col-md-6">
+                                     
                                     <div class="single-car-wrap">
-                                        <div class="car-list-thumb car-thumb-1"></div>
+                                        <div class="car-list-thumb car-thumb-1">
+                                                <img style="width:100%" src="{{asset('app/cover_images/'.$value->cover_image)}}">
+                                        </div>
                                         <div class="car-list-info without-bar">
-                                            <h2><a href="#">Dacia Logan</a></h2>
-                                            <h5>300DH Rent /per a day</h5>
-                                            <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean inorci luctus et ultrices posuere cubilia.</p>
+                                            <h2><a href="#">{{$value->title}}</a></h2>
+                                            <h5>{{$value->price}}DH Rent /per a day</h5>
+                                            {{-- <p>{{$value->body}}</p> --}}
                                             <ul class="car-info-list">
-                                                <li>Year:  <span> 2014</span></li>
-                                                <li>Fuel : <span>Diesel</span></li>
-                                                <li>Gearbox :<span>Auto</span></li>
+                                                <li>Year:  <span> {{$value->year}}</span></li>
+                                                <li>Fuel : <span>{{$value->fuel}}</span></li>
+                                                <li>Gearbox :<span>{{$value->gearbox}}</span></li>
                                             </ul>
                                             
-                                            <a href="#" class="rent-btn">Book It</a>
+                                            <a href="#" class="rent-btn">Select</a>
                                         </div>
                                     </div>
+                                    
                                 </div>
+                                @endforeach
                                 <!-- Single Car End -->
     
                             </div>

@@ -25,7 +25,7 @@
         <!--=== Responsive CSS ===-->
         <link href="{{asset('css/responsive.css') }}" rel="stylesheet">
         <!--=== App CSS ===-->
-        <link rel="stylesheet" href="{{asset('css/app.css') }}">
+        {{-- <link rel="stylesheet" href="{{asset('css/app.css') }}"> --}}
 
         <title>{{config('app.name','Cardoor')}}</title>
 

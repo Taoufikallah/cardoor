@@ -14,10 +14,11 @@
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
-Route::get('/cars', 'PagesController@cars');
+Route::get('/cars', 'PagesController@show');
 Route::get('/contact', 'PagesController@contact');
 
-
+/* Route::get('/dashboard', 'CarfController@index');
+ */
 
 
 
@@ -68,11 +69,11 @@ Route::get('admin/booking', 'BookingController@index')->name('booking');
 
 
 // The All Route for Clients
-/* Route::get('admin/clients', 'ClientController@index')->name('admin');
+Route::get('admin/clients', 'ClientController@index')->name('admin');
 
 Route::get('frontend/clients/create/post', 'ClientController@create')->name('client.create');
 Route::POST('admin/clients/store/post', 'ClientController@store')->name('post.store');
- */
+
 
 
 

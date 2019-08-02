@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\post;
 
 class PagesController extends Controller
 {
@@ -12,6 +13,20 @@ class PagesController extends Controller
         /* $cars = Car::orderBy('title','asc')->paginate(2); */
        /*  return view('frontend/pages.index')->with('cars',$cars); */
     }
+    /* public function show($id)
+    {
+        $car = Post::find($id);
+        dd($car);exit;
+        return view('frontend/pages.cars', compact('car'));
+    } */
+
+    public function show()
+    {
+        $car = Post::all();
+        /* dd($car);exit; */
+        return view('frontend/pages.cars', compact('car'))/* ->with('posts', $car->posts) */;
+    }
+
     public function about(){
         return view('frontend/pages.about');
     }
