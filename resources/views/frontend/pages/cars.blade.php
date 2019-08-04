@@ -46,7 +46,7 @@
                                                 <li>Gearbox :<span>{{$value->gearbox}}</span></li>
                                             </ul>
                                             
-                                            <a href="#" class="rent-btn">Select</a>
+                                        <a href="{{route('frontend.post.show', ['id' => $value->id])}}" class="rent-btn">Select</a>
                                         </div>
                                     </div>
                                     

@@ -14,8 +14,12 @@
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
-Route::get('/cars', 'PagesController@show');
+Route::get('/cars', 'PagesController@car');
+
+
 Route::get('/contact', 'PagesController@contact');
+
+Route::get('/cars/{id}', 'PagesController@show')->name('frontend.post.show');
 
 /* Route::get('/dashboard', 'CarfController@index');
  */
@@ -46,6 +50,7 @@ Route::get('admin/user' ,'UserController@index');
 Route::get('admin/user/newEmail', 'UserController@newEmail')->name('newEmail');
 
 // The All Route for Cars
+
 Route::get('admin/cars', 'CarController@index')->name('admin');
 Route::get('admin/cars/create/post', 'CarController@create')->name('post.create');
 Route::POST('admin/cars/store/post', 'CarController@store')->name('post.store');

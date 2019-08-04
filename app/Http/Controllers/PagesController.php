@@ -20,11 +20,17 @@ class PagesController extends Controller
         return view('frontend/pages.cars', compact('car'));
     } */
 
-    public function show()
+    public function car()
     {
         $car = Post::all();
         /* dd($car);exit; */
         return view('frontend/pages.cars', compact('car'))/* ->with('posts', $car->posts) */;
+    }
+
+    public function show($id)
+    {
+        $car = Post::find($id);
+        return view('frontend/pages/show', compact('car'));
     }
 
     public function about(){
