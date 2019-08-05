@@ -168,7 +168,7 @@
 }
 
 #header-top {
-	background-color: #1e2228;
+	background-color: #dd4b39;
 	padding: 8px 0;
 }
 
@@ -201,14 +201,14 @@ header.fixTotop #header-top {
 /*== Header Bottom CSS Start ==*/
 
 #header-bottom {
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: #c44635;
 	padding: 15px 0;
 	-webkit-transition: all 0.4s ease 0s;
 	transition: all 0.4s ease 0s;
 }
 
 header.fixTotop #header-bottom {
-	background-color: rgba(0, 0, 0, 1);
+	background-color: #dd4b39;
 	-webkit-transition: all 0.4s ease 0s;
 	transition: all 0.4s ease 0s;
 }
@@ -1313,7 +1313,7 @@ a.slicknav_btn {
 }
 
 .footer-widget-area {
-	background-color: #1e2228;
+	background-color: #c44635;
 	padding: 60px 0;
 }
 
@@ -1479,7 +1479,7 @@ a.slicknav_btn {
 }
 
 .footer-bottom-area {
-	background-color: #000;
+	background-color: #dd4b39;
 	color: #eaeaea;
 	padding: 15px 0;
 }
@@ -2261,7 +2261,7 @@ body,
 .car-list-thumb {
 	background-size: cover;
 	background-position: center center;
-	height: 300px;
+	height: 200px;
 	max-height: 100%;
 }
 
@@ -2385,7 +2385,8 @@ body,
 
 .car-list-info.without-bar {
 	margin: 0;
-	padding: 25px;
+	padding: 30px;
+	margin-bottom: 20px;
 }
 
 .car-list-info.without-bar .rating {

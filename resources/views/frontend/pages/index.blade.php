@@ -2,50 +2,54 @@
 @extends('frontend/layouts.app')
 
 @section('content')
-    <!--== SlideshowBg Area Start ==-->
-    <section id="slideslow-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="slideshowcontent">
+    <!--== Slider Area Start ==-->
+    <section id="slider-area">
+            <!--== slide Item One ==-->
+            <div class="single-slide-item overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="book-a-car">
+                                <form action="index.html">
+                                    <!--== Brand Choose ==-->
+                                    <div class="choose-car-type book-item">
+                                            <h4>CHOOSE BRAND :</h4>
+                                            <select class="custom-select">
+                                              <option selected>Select</option>
+                                              <option value="1">BMW</option>
+                                              <option value="2">Audi</option>
+                                              <option value="3">Lexus</option>
+                                            </select>
+                                        </div>
+                                        <!--== Car Choose ==-->
+    
+                                    <!--== Pick Up Date ==-->
+                                    <div class="pick-up-date book-item">
+                                        <h4>PICK-UP DATE:</h4>
+                                        <input id="startDate" placeholder="Pick Up Date" />
+    
+                                        <div class="return-car">
+                                            <h4>Return DATE:</h4>
+                                            <input id="endDate" placeholder="Return Date" />
+                                        </div>
+                                    </div>
+                                    <!--== Pick Up Location ==-->
+    
+                                    
+    
+                                    <div class="book-button text-center">
+                                        <button class="book-now-btn">Book Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-7 text-right">
                             <div class="display-table">
                                 <div class="display-table-cell">
-                                    <h1>BOOK A CAR TODAY!</h1>
-                                    <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
-    
-                                    <div class="book-ur-car">
-                                        <form action="index2.html">
-                                            <div class="pick-location bookinput-item">
-                                                <select class="custom-select">
-                                                  <option selected>Pick Location</option>
-                                                  <option value="1">Dhaka</option>
-                                                  <option value="2">Comilla</option>
-                                                  <option value="3">Barishal</option>
-                                                  <option value="3">Rangpur</option>
-                                                </select>
-                                            </div>
-    
-                                            <div class="pick-date bookinput-item">
-                                                <input id="startDate2" placeholder="Pick Date" />
-                                            </div>
-    
-                                            <div class="retern-date bookinput-item">
-                                                <input id="endDate2" placeholder="Return Date" />
-                                            </div>
-    
-                                            <div class="car-choose bookinput-item">
-                                                <select class="custom-select">
-                                                  <option selected>Choose Car</option>
-                                                  <option value="1">BMW</option>
-                                                  <option value="2">Audi</option>
-                                                  <option value="3">Lexus</option>
-                                                </select>
-                                            </div>
-    
-                                            <div class="bookcar-btn bookinput-item">
-                                                <button type="submit">Book Car</button>
-                                            </div>
-                                        </form>
+                                    <div class="slider-right-text">
+                                        <h1>BOOK A CAR TODAY!</h1>
+                                        <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
                                     </div>
                                 </div>
                             </div>
@@ -53,8 +57,10 @@
                     </div>
                 </div>
             </div>
+            <!--== slide Item One ==-->
         </section>
-        <!--== SlideshowBg Area End ==-->
+        <!--== Slider Area End ==-->
+    
     
         <!--== About Us Area Start ==-->
         <section id="about-area" class="section-padding">

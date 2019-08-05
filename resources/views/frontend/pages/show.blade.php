@@ -26,21 +26,13 @@
             <!-- Car List Content Start -->
             <div class="col-lg-8">
                 <div class="car-details-content">
-                    <h2>Aston Martin One-77 <span class="price">Rent: <b>$150</b></span></h2>
-                    <div class="car-preview-crousel">
-                        <div class="single-car-preview">
-                            <img src="assets/img/car/car-5.jpg" alt="JSOFT">
-                        </div>
-                        <div class="single-car-preview">
-                            <img src="assets/img/car/car-1.jpg" alt="JSOFT">
-                        </div>
-                        <div class="single-car-preview">
-                            <img src="assets/img/car/car-6.jpg" alt="JSOFT">
-                        </div>
+                    <h2>{{$car->title}} <span class="price">Rent: <b>{{$car->price}}DH</b></span></h2>
+                    <div class="car-list-thumb car-thumb-1">
+                        <img style="width:100%" src="{{asset('app/cover_images/'.$car->cover_image)}}">
                     </div>
                     <div class="car-details-info">
                         <h4>Additional Info</h4>
-                        <p>The Aventador LPER 720-4 50° ise a limited (200 units – 100 Coupe and 100 Roadster) versione of thed Aventadored LP 700-4 commemorating the 50th anniversary of Lamborghini. It included ised increased engine power to 720 PS (530 kW; 710 bhp) via a new specific engine calibration, enlarged and extended front air intakes and the aerodynamic splitter.</p>
+                        <p>{{$car->body}}</p>
 
                         <div class="technical-info">
                             <div class="row">
@@ -48,26 +40,34 @@
                                     <div class="tech-info-table">
                                         <table class="table table-bordered">
                                             <tr>
-                                                <th>Class</th>
-                                                <td>Compact</td>
+                                                <th>Brand</th>
+                                                <td>@if($car->brand !== null)         
+                                                        {{  $car->brand->name }}
+                                                     @endif
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <th>Fuel</th>
-                                                <td>Petrol</td>
+                                                    <th>Year</th>
+                                                    <td>{{$car->year}}</td>
+                                                </tr>
+                                            <tr>
+                                                <th>Color</th>
+                                                <td>{{$car->color}}</td>
                                             </tr>
                                             <tr>
-                                                <th>Doors</th>
-                                                <td>5</td>
+                                                <th>Number Doors</th>
+                                                <td>{{$car->number_doors}}</td>
                                             </tr>
                                             <tr>
-                                                <th>GearBox</th>
-                                                <td>Automatic</td>
+                                                <th>Number Places</th>
+                                                <td>{{$car->number_places}}</td>
                                             </tr>
+                                            
                                         </table>
                                     </div>
                                 </div>
-
-                                <div class="col-lg-6">
+                                
+                                {{-- <div class="col-lg-6">
                                     <div class="tech-info-list">
                                         <ul>
                                             <li>ABS</li>
@@ -81,48 +81,12 @@
                                             <li>GPS</li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
-
-                        <div class="review-area">
-                            <h3>Be the first to review “Aston Martin One-77”</h3>
-                            <div class="review-star">
-                                <p class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star unmark"></i>
-                                    <i class="fa fa-star unmark"></i>
-                                </p>
+                        <div class="input-submit">
+                                <button type="submit">Booking Car</button>
                             </div>
-                            <div class="review-form">
-                                <form action="index.html">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="name-input">
-                                                <input type="text" placeholder="Full Name">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="email-input">
-                                                <input type="email" placeholder="Email Address">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="message-input">
-                                        <textarea name="review" cols="30" rows="5" placeholder="Write Your Feedback Here!"></textarea>
-                                    </div>
-
-                                    <div class="input-submit">
-                                        <button type="submit">Submit</button>
-                                        <button type="reset">Clear</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -143,7 +107,7 @@
                     <!-- Single Sidebar End -->
 
                     <!-- Single Sidebar Start -->
-                    <div class="single-sidebar">
+                    {{-- <div class="single-sidebar">
                         <h3>Rental Tips</h3>
 
                         <div class="sidebar-body">
@@ -189,7 +153,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- Single Sidebar End -->
 
                     <!-- Single Sidebar Start -->
