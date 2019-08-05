@@ -56,9 +56,9 @@
                                 <li><a href="/about">About</a></li>
                                 <li><a href="/services">services</a></li>
                                
-                                <li><a href="/cars">Cars</a>
+                                {{-- <li><a href="/cars">Cars</a>
                                     
-                                </li>
+                                </li> --}}
                                 <li><a href="/contact">Contact</a></li>
                             </ul>
                         </nav>

@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\post;
+use App\brand;
 
 class PagesController extends Controller
 {
     public function index(){
+        $car = Post::all();
+        
+        $brands =  Brand::pluck('name', 'id')->prepend('selectioner'); 
         $title ='welcome to cardoor!!';
-        return view('frontend/pages.index', compact('title'));
+
+        return view('frontend/pages.index',['brand'=>$brands], compact('car','brands'));
         /* $cars = Car::orderBy('title','asc')->paginate(2); */
        /*  return view('frontend/pages.index')->with('cars',$cars); */
     }

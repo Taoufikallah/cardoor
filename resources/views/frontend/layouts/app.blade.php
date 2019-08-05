@@ -24,6 +24,8 @@
         <link href="{{asset('css/style.css') }}" rel="stylesheet">
         <!--=== Responsive CSS ===-->
         <link href="{{asset('css/responsive.css') }}" rel="stylesheet">
+        
+
         <!--=== App CSS ===-->
         {{-- <link rel="stylesheet" href="{{asset('css/app.css') }}"> --}}
 
@@ -70,7 +72,7 @@
         <script src="{{asset('js/plugins/magnific-popup.min.js') }}"></script>
         <!--=== Slicknav Min Js ===-->
         <script src="{{asset('js/plugins/slicknav.min.js') }}"></script>
-    
+
         <!--=== Mian Js ===-->
         <script src="{{asset('js/main.js') }}"></script>
     </body>
