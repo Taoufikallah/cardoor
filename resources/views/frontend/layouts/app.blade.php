@@ -6,6 +6,7 @@
 
         <!--=== Bootstrap CSS ===-->
         <link href="{{asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
         <!--=== Vegas Min CSS ===-->
         <link href="{{asset('css/plugins/vegas.min.css') }}" rel="stylesheet">
         <!--=== Slicknav CSS ===-->
@@ -14,6 +15,8 @@
         <link href="{{asset('css/plugins/magnific-popup.css') }}" rel="stylesheet">
         <!--=== Owl Carousel CSS ===-->
         <link href="{{asset('css/plugins/owl.carousel.min.css') }}" rel="stylesheet">
+        
+
         <!--=== Gijgo CSS ===-->
         <link href="{{asset('css/plugins/gijgo.css') }}" rel="stylesheet">
         <!--=== FontAwesome CSS ===-->
@@ -46,6 +49,7 @@
         <!--== Scroll Top Area End ==-->
     
         <!--=======================Javascript============================-->
+        
         <!--=== Jquery Min Js ===-->
         <script src="{{asset('js/jquery-3.2.1.min.js') }}"></script>
         <!--=== Jquery Migrate Min Js ===-->
@@ -54,6 +58,8 @@
         <script src="{{asset('js/popper.min.js') }}"></script>
         <!--=== Bootstrap Min Js ===-->
         <script src="{{asset('js/bootstrap.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
         <!--=== Gijgo Min Js ===-->
         <script src="{{asset('js/plugins/gijgo.js') }}"></script>
         <!--=== Vegas Min Js ===-->

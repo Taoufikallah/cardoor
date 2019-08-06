@@ -85,13 +85,109 @@
                             </div>
                         </div>
                         <div class="input-submit">
-                                <button type="submit">Booking Car</button>
+                                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Add Car
+                                    </button>
+                                {{-- <button type="submit">Booking Car</button> --}}
                             </div>
                     </div>
                 </div>
             </div>
             <!-- Car List Content End -->
+            <!-- Button trigger modal -->
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                            {!! Form::open(['action' => 'PagesController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                            <div class="form-group">
+                                {{ Form::label('name', 'Name') }}
+                                {{ Form::text('name', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+                            </div>
+                           
+                            <div class="form-group">
+                                {{ Form::label('email', 'Email') }}
+                                {{ Form::text('email', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+                            </div>
 
+                            <div class="form-group">
+                                {{ Form::label('phone', 'Phone') }}
+                                {{ Form::text('phone', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+                            </div>
+                            <div class="form-group">
+                                {{ Form::label('adress', 'Adress') }}
+                                {{ Form::text('adress', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+                            </div>
+                            <div class="form-group">
+                                {{ Form::label('city', 'City') }}
+                                {{ Form::select ('year', [
+                                                  'AGADIR' => 'AGADIR ', 
+                                                  'AL HOCEIMA' => 'AL HOCEIMA ', 
+                                                  'CASABLANCA' => 'CASABLANCA ', 
+                                                  'CHEFCHAOUEN' => 'CHEFCHAOUEN ',
+                                                  'DAKHLA' => 'DAKHLA ',  
+                                                  'RABAT' => 'RABAT ', 
+                                                  'SAFI' => 'SAFI ', 
+                                                  'SALE' => 'SALE ', 
+                                                  'TANGER' => 'TANGER ', 
+                                                  'TAZA' => 'TAZA ',
+                                                  'TEMARA' => 'TEMARA ',
+                                                  'TETOUAN' => 'TETOUAN ',
+                                                ],
+                                                   1 , ['id' =>'year','class' => 'form-control']) 
+                                                   }}
+                            </div>
+                            <div class="form-group">
+                                 {{ Form::label('age', 'Age') }}
+                                 {{ Form::select ('age', ['18' => '18',
+                                                           '19' => ' 19',
+                                                            '20' => ' 20',
+                                                            '21' => ' 21',
+                                                            '22' => ' 22',
+                                                            '23' => ' 23',
+                                                            '24' => ' 24',
+                                                            '25' => ' 25',
+                                                            '26' => ' 26',
+                                                            '27' => ' 27',
+                                                            '28' => ' 28',
+                                                            '29' => ' 29',
+                                                            '30' => ' 30',                    
+                                                            '31' => ' 31',
+                                                            '31' => ' 32',
+                                                            '31' => ' 33',
+                                                            '31' => ' 34',
+                                                            '31' => ' 35',
+                                                            '31' => ' 36',
+                                                            '31' => ' 37',
+                                                            '31' => ' 38',
+                                                            '31' => ' 39',
+                                                            '31' => ' 40',
+                                                        ],
+                                                            2 , ['id' =>'select','class' => 'form-control']) }}
+                            </div>
+                            <div class="form-group">
+                                {{ Form::label('license', 'License') }}
+                                {{ Form::text('license', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+                            </div>
+                            
+                            {{ Form::submit('Booking Car', array('class' => 'btn btn-primary', 'style'=> 'margin-top:20px')) }}
+                            {{ Form::button('Close', array('class' => 'btn btn-secondary', 'style'=> 'margin-top:20px')) }}
+
+
+                {!! Form::close() !!}
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
             <!-- Sidebar Area Start -->
             <div class="col-lg-4">
                 <div class="sidebar-content-wrap m-t-50">

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\post;
 use App\brand;
-
+use App\client
+;
 class PagesController extends Controller
 {
     public function index(){
+        
         $car = Post::all();
         
         $brands =  Brand::pluck('name', 'id')->prepend('selectioner'); 
@@ -37,6 +39,47 @@ class PagesController extends Controller
         $car = Post::find($id);
         return view('frontend/pages/show', compact('car'));
     }
+
+    public function store(Request $request)
+    {
+       $this->validate($request, array(
+           'name' => 'required',
+           'email'=> 'required',
+           'phone'=> 'required',
+           'adress'=> 'required',
+           'city'=> 'required',
+           'age'=> 'required',
+           'license'=> 'required',
+       ));
+
+       
+
+       $client = new Client;
+       $car->name = $request->name;
+       $car->email = $request->email;
+       $car->phone = $request->phone;
+       $car->adress = $request->adress;
+       $car->city = $request->city;
+       $car->age = $request->license;
+
+      
+       
+       $car->save();
+
+       return redirect()->route('admin');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function about(){
         return view('frontend/pages.about');

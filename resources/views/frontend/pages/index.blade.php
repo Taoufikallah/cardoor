@@ -1,4 +1,3 @@
-
 @extends('frontend/layouts.app')
 
 @section('content')
@@ -24,19 +23,22 @@
         <section id="car-list-area" class="section-padding">
                 <div class="container">
                     <div class="row">
-                        
-                        <div class="form-group">
-                                {{ Form::label('brand_id', 'Brand') }}
-                               
-                                {{ Form::select ('brand_id', $brands, null , ['id' =>'select', 'onchange'=>'myFunction()' ,'class' => 'form-control']) }}
-                            </div>
+
                         <!-- Car List Content Start -->
                         <div class="col-lg-12">
+                                <?php $no = 1?>
+                                <center>
+                                <select name="select2" id="select2" class="form-control">
+                                    @foreach ($car as $key => $value)
+                                        <option value=""> {{  $value->brand->name }} </option>
+                                    @endforeach
+                                </select>
+                            </center>
                             <div class="car-list-content">
                                 <div class="row">
                                     <!-- Single Car Start -->
-                                    <?php $no=1 ?>
-                                         @foreach ($car as $key => $value)
+                                    <?php $no = 1?>
+                                        @foreach ($car as $key => $value)
                                     <div class="col-sm-4 col-md-4" id="demo"> 
                                          
                                         <div class="single-car-wrap">
@@ -44,10 +46,11 @@
                                                     <img style="width:100%" src="{{asset('app/cover_images/'.$value->cover_image)}}">
                                             </div>
                                             <div class="car-list-info without-bar">
-                                                    <p class="lead"  > @if($value->brand !== null)         
+                                                    <p class="lead"  > 
+                                                        @if($value->brand !== null)         
                                                             {{  $value->brand->name }}
-                                                            @endif
-                                                  </p>
+                                                         @endif
+                                                    </p>
                                                 <h5>{{$value->price}}DH Rent /per a day</h5>
                                                 {{-- <p>{{$value->body}}</p> --}}
                                                 <ul class="car-info-list">
@@ -109,11 +112,41 @@
         </section>
         <!--== Mobile App Area End ==-->
     
-        <script>
-                function myFunction() {
-                  var brands = document.getElementById("select").value ;
-                  
-                  document.getElementById("demo").innerHTML = "You selected: " + brands;
-                }
-                </script>
+               <script>
+
+$(document).ready(function() {
+
+        $('#select').on('change', function(){
+            var labCategId = $(this).val();
+        // alert(labCategId);
+            if(labCategId) {
+                $.ajax({
+                    processing : 'true',
+                    serverSide : 'true',
+                    url: 'get_lab_sub',
+                    type:"POST",
+                    data : {labCategId:labCategId,"_token":"{{ csrf_token() }}"},
+                    dataType:"json",
+
+                    success:function(data) {
+                        if(data){
+                            $('#labS').empty();
+
+                            $.each(data, function(key, value){
+                            // alert(key);
+                                $('#labS').append('<option value="'+value.lab_sub_category_id+'">' + value.sub_category_name + '</option>');
+
+                            });
+                        }
+
+                    },
+
+                });
+            } else {
+                $('select[name="labS"]').empty();
+            }
+
+        });
+    }
+        </script>
 @endsection

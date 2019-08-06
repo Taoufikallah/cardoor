@@ -20,6 +20,7 @@ Route::get('/cars', 'PagesController@car');
 Route::get('/contact', 'PagesController@contact');
 
 Route::get('/cars/{id}', 'PagesController@show')->name('frontend.post.show');
+Route::POST('ars/store/post', 'PagesController@store')->name('post.store');
 
 /* Route::get('/dashboard', 'CarfController@index');
  */
