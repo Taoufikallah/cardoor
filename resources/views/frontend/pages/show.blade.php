@@ -145,6 +145,18 @@
                                                    1 , ['id' =>'year','class' => 'form-control']) 
                                                    }}
                             </div>
+
+                            <!--== Pick Up Date ==-->
+                            <div class="pick-up-date book-item">
+                                    <input id="startDate" placeholder="Pick Up Date" />
+
+                                    <div class="return-car">
+                                        <input id="endDate" placeholder="Return Date" />
+                                    </div>
+                                </div>
+                                <!--== Pick Up Location ==-->
+
+
                             <div class="form-group">
                                  {{ Form::label('age', 'Age') }}
                                  {{ Form::select ('age', ['18' => '18',

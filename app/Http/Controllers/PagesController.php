@@ -8,15 +8,28 @@ use App\brand;
 use App\client
 ;
 class PagesController extends Controller
-{
-    public function index(){
+{   
+    public function index(Request $request){
         
-        $car = Post::all();
+        $qBrand = $request->get('q_brand');
+        if ($qBrand && $qBrand != '') {
+            $car = Post::where('brand_id', $qBrand)
+            //->orderBy('name', 'desc')
+            //->take(10)
+            ->get();
+        } else {
+            $car = Post::all();
+        }
+
+        //$brands =  Brand::pluck('name', 'id')->prepend('selectioner'); 
+        $brands =  Brand::all(); 
+
+        //dd($brands); exit;
         
-        $brands =  Brand::pluck('name', 'id')->prepend('selectioner'); 
+    
         $title ='welcome to cardoor!!';
 
-        return view('frontend/pages.index',['brand'=>$brands], compact('car','brands'));
+        return view('frontend/pages.index',[], compact('car','brands', 'qBrand'));
         /* $cars = Car::orderBy('title','asc')->paginate(2); */
        /*  return view('frontend/pages.index')->with('cars',$cars); */
     }

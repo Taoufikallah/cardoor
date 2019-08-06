@@ -23,17 +23,25 @@
         <section id="car-list-area" class="section-padding">
                 <div class="container">
                     <div class="row">
-
+                        
                         <!-- Car List Content Start -->
                         <div class="col-lg-12">
+
                                 <?php $no = 1?>
-                                <center>
-                                <select name="select2" id="select2" class="form-control">
-                                    @foreach ($car as $key => $value)
-                                        <option value=""> {{  $value->brand->name }} </option>
-                                    @endforeach
-                                </select>
-                            </center>
+
+                                <form action="/" method="GET">
+                                    <select name="q_brand" id="q_brand" class="form-control" onchange="this.form.submit()">
+                                            @foreach ($brands as $key => $brand)
+                                                <option value="{{ $brand->id }}" @if ($brand->id == $qBrand)
+                                                    selected="selected"
+                                                @endif> {{  $brand->name }} </option>
+                                            @endforeach
+                                        </select>
+                                       
+                                </form>
+                                
+
+                                <br><br><br>
                             <div class="car-list-content">
                                 <div class="row">
                                     <!-- Single Car Start -->
