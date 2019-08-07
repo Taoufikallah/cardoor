@@ -13,14 +13,17 @@ class PagesController extends Controller
         
         $qBrand = $request->get('q_brand');
         if ($qBrand && $qBrand != '') {
-            $car = Post::where('brand_id', $qBrand)
+            $car = Post::where('brand_id', $qBrand);
+            $car = Post::orderBy('title','asc');
+            
             //->orderBy('name', 'desc')
             //->take(10)
-            ->get();
+            /* ->get() */
         } else {
             $car = Post::all();
         }
 
+        $car = Post::paginate(9);
         //$brands =  Brand::pluck('name', 'id')->prepend('selectioner'); 
         $brands =  Brand::all(); 
 
