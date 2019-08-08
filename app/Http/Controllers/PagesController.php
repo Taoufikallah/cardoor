@@ -13,25 +13,19 @@ class PagesController extends Controller
         
         $qBrand = $request->get('q_brand');
         if ($qBrand && $qBrand != '') {
-            $car = Post::where('brand_id', $qBrand);
-            $car = Post::orderBy('title','asc');
-            
+            $car = Post::where('brand_id', $qBrand)
             //->orderBy('name', 'desc')
             //->take(10)
-            /* ->get() */
+            ->get();
         } else {
             $car = Post::all();
         }
-
-        $car = Post::paginate(9);
         //$brands =  Brand::pluck('name', 'id')->prepend('selectioner'); 
         $brands =  Brand::all(); 
-
         //dd($brands); exit;
         
     
         $title ='welcome to cardoor!!';
-
         return view('frontend/pages.index',[], compact('car','brands', 'qBrand'));
         /* $cars = Car::orderBy('title','asc')->paginate(2); */
        /*  return view('frontend/pages.index')->with('cars',$cars); */
@@ -71,30 +65,20 @@ class PagesController extends Controller
        
 
        $client = new Client;
-       $car->name = $request->name;
-       $car->email = $request->email;
-       $car->phone = $request->phone;
-       $car->adress = $request->adress;
-       $car->city = $request->city;
-       $car->age = $request->license;
+       $client->name = $request->name;
+       $client->email = $request->email;
+       $client->phone = $request->phone;
+       $client->adress = $request->adress;
+       $client->city = $request->city;
+       $client->age = $request->age;
+       $client->license = $request->license;
 
       
        
-       $car->save();
+       $client->save();
 
-       return redirect()->route('admin');
+       return redirect()->route('frontend/pages/index');
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
     public function about(){
@@ -106,7 +90,5 @@ class PagesController extends Controller
     public function cars(){
         return view('frontend/pages.cars');
     }
-    public function contact(){
-        return view('frontend/pages.contact');
-    }
+    
 }

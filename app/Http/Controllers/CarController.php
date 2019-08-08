@@ -44,7 +44,23 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
+        $car = new Post;
+
+        $car->title = $request->title;
+       $car->body = $request->body;
+       $car->price = $request->price;
+       $car->fuel = $request->fuel;
+       $car->color = $request->color;
+       $car->year = $request->year;
+       $car->fiscal_power = $request->fiscal_power;
+       $car->number_doors = $request->number_doors;
+       $car->number_places = $request->number_places;
+       $car->gearbox = $request->gearbox;
+       $car->brand_id = $request->brand_id;
+       $car->cover_image = $request->cover_image;
+
        $this->validate($request, array(
+           
            'title' => 'required|max:255',
            'body'=> 'required',
            'price'=> 'required',
@@ -60,7 +76,11 @@ class CarController extends Controller
        ));
 
        // Handle File Upload
-       if($request->hasFile('cover_image')){
+       if($request->hasFile('cover_image')) {
+           $car->cover_image = $request->cover_image->store('cover_image');
+       }
+
+       /* if($request->hasFile('cover_image')){
             // Get filename with the extension
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             // Get just filename
@@ -70,13 +90,13 @@ class CarController extends Controller
             // Filename to store
             $fileNameToStore= $filename.'_'.time().'.'.$extension;
             // Upload Image
-            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+            $path = $request->file('cover_image')->storeAs('cover_images', $fileNameToStore);
         } else {
             $fileNameToStore = 'noimage.jpg';
-        }
+        } */
 
-       $car = new Post;
-       $car->title = $request->title;
+       /* $car = new Post; */
+       /* $car->title = $request->title;
        $car->body = $request->body;
        $car->price = $request->price;
        $car->fuel = $request->fuel;
@@ -87,7 +107,7 @@ class CarController extends Controller
        $car->number_places = $request->number_places;
        $car->gearbox = $request->gearbox;
        $car->brand_id = $request->brand_id;
-       $car->cover_image = $fileNameToStore;
+       $car->cover_image = $fileNameToStore; */
        
        $car->save();
 
@@ -131,6 +151,19 @@ class CarController extends Controller
     {
         $car = Post::find($id);
 
+        $car->title = $request->title;
+       $car->body = $request->body;
+       $car->price = $request->price;
+       $car->fuel = $request->fuel;
+       $car->color = $request->color;
+       $car->year = $request->year;
+       $car->fiscal_power = $request->fiscal_power;
+       $car->number_doors = $request->number_doors;
+       $car->number_places = $request->number_places;
+       $car->gearbox = $request->gearbox;
+       $car->brand_id = $request->brand_id;
+       $car->cover_image = $request->cover_image;
+
         $this->validate($request, array(
             'title' => 'required|max:255',
             'body'=> 'required',
@@ -145,9 +178,14 @@ class CarController extends Controller
             'brand_id'=> 'required',
             'cover_image' => 'image|nullable|max:1999'
         ));
-        $car = Post::find($id);
-        // Handle File Upload
-       if($request->hasFile('cover_image')){
+        
+
+        
+// Handle File Upload
+if($request->hasFile('cover_image')) {
+    $car->cover_image = $request->cover_image->store('cover_image');
+}
+       /* if($request->hasFile('cover_image')){
             // Get filename with the extension
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             // Get just filename
@@ -160,21 +198,10 @@ class CarController extends Controller
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
         } else {
             $fileNameToStore = 'noimage.jpg';
-        }
+        } */
         
 
-       $car->title = $request->title;
-       $car->body = $request->body;
-       $car->price = $request->price;
-       $car->fuel = $request->fuel;
-       $car->color = $request->color;
-       $car->year = $request->year;
-       $car->fiscal_power = $request->fiscal_power;
-       $car->number_doors = $request->number_doors;
-       $car->number_places = $request->number_places;
-       $car->gearbox = $request->gearbox;
-       $car->brand_id = $request->brand_id;
-       $car->cover_image = $fileNameToStore;
+       
 
         $car->save();
 

@@ -128,7 +128,7 @@
                             </div>
                             <div class="form-group">
                                 {{ Form::label('city', 'City') }}
-                                {{ Form::select ('year', [
+                                {{ Form::select ('city', [
                                                   'AGADIR' => 'AGADIR ', 
                                                   'AL HOCEIMA' => 'AL HOCEIMA ', 
                                                   'CASABLANCA' => 'CASABLANCA ', 
@@ -145,15 +145,15 @@
                                                    1 , ['id' =>'year','class' => 'form-control']) 
                                                    }}
                             </div>
-
+                           
                             <!--== Pick Up Date ==-->
-                            <div class="pick-up-date book-item">
+                            {{-- <div class="pick-up-date book-item">
                                     <input id="startDate" placeholder="Pick Up Date" />
 
                                     <div class="return-car">
                                         <input id="endDate" placeholder="Return Date" />
                                     </div>
-                                </div>
+                                </div> --}}
                                 <!--== Pick Up Location ==-->
 
 

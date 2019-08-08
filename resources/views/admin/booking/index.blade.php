@@ -13,12 +13,10 @@
                     <thead>
                         <th>#</th>
                         <th>Name</th>
+                        <th>Reserve Car</th>
                         <th>Email</th>
-                        <th>pickup date</th>
-                        <th>return_date</th>
-                        <th>pickup_time</th>
-                        <th>return_time</th>
-                        
+                        <th>pickup Date</th>
+                        <th>return Date</th>
                     </thead>
                     <tbody>
                      

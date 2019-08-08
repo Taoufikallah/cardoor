@@ -17,10 +17,8 @@ Route::get('/services', 'PagesController@services');
 Route::get('/cars', 'PagesController@car');
 
 
-Route::get('/contact', 'PagesController@contact');
-
 Route::get('/cars/{id}', 'PagesController@show')->name('frontend.post.show');
-Route::POST('ars/store/post', 'PagesController@store')->name('post.store');
+Route::POST('cars/store/post', 'PagesController@store')->name('post.store');
 
 /* Route::get('/dashboard', 'CarfController@index');
  */
@@ -61,7 +59,7 @@ Route::POST('admin/cars/update/post/{id}', 'CarController@update')->name('post.u
 Route::POST('admin/cars/delete/post/{id}', 'CarController@destroy')->name('post.delete');
 
 // The All Route for brands
-Route::get('admin/brands', 'BrandController@index')->name('admin');
+Route::get('admin/brands', 'BrandController@index')->name('admin/brands');
 Route::get('admin/brands/create/brand', 'BrandController@create')->name('brand.create');
 Route::POST('admin/brands/store/brand', 'BrandController@store')->name('brand.store');
 Route::get('admin/brands/show/brand/{id}', 'BrandController@show')->name('brand.show');
@@ -75,10 +73,10 @@ Route::get('admin/booking', 'BookingController@index')->name('booking');
 
 
 // The All Route for Clients
-Route::get('admin/clients', 'ClientController@index')->name('admin');
+Route::get('admin/clients', 'ClientController@index')->name('admin/clients');
 
-Route::get('frontend/clients/create/post', 'ClientController@create')->name('client.create');
-Route::POST('admin/clients/store/post', 'ClientController@store')->name('post.store');
+Route::get('frontned/pages/index', 'ClientController@create')->name('client.create');
+Route::POST('frontned/pages/index', 'ClientController@store')->name('post.store');
 
 
 
@@ -92,3 +90,6 @@ Route::POST('admin/clients/store/post', 'ClientController@store')->name('post.st
 Route::post('backend/cars/update', 'CarsController@update')->name('cars.update');
 
 Route::get('backend/cars/destroy/{id}', 'CarsController@destroy');
+
+
+Route::get('/contact', 'MessageController@index');

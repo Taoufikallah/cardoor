@@ -24,7 +24,7 @@
                     </thead>
                     <tbody>
                         <?php $no=1 ?>
-                        @foreach ($client as $key => $value)
+                        {{-- @foreach ($client as $key => $value)
                             <tr>
                                 <td>{{ $value->name }}</td>
                                 <td>{{ $value->email }}</td>
@@ -44,7 +44,7 @@
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
-                    @endforeach
+                    @endforeach --}}
                     </tbody>
                 </table>
             </div>

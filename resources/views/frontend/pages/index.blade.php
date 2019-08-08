@@ -26,7 +26,8 @@
                         
                         <!-- Car List Content Start -->
                         <div class="col-lg-12">
-
+                            <h3>Choose the Brand</h3>
+                            <br>
                                 <?php $no = 1?>
 
                                 <form action="/" method="GET">
@@ -37,8 +38,8 @@
                                                 @endif> {{  $brand->name }} </option>
                                             @endforeach
                                         </select>
-                                       
                                 </form>
+                                
                                 
 
                                 <br><br><br>
@@ -51,7 +52,7 @@
                                          
                                         <div class="single-car-wrap">
                                             <div class="car-list-thumb car-thumb-1">
-                                                    <img style="width:100%" src="{{asset('app/cover_images/'.$value->cover_image)}}">
+                                                    <img style="width:100%" src="{{ asset('storage/'.$value->cover_image)}}">
                                             </div>
                                             <div class="car-list-info without-bar">
                                                     <p class="lead"  > 
@@ -82,7 +83,7 @@
                             <!-- Page Pagination Start -->
                             <div class="page-pagi">
                                 <nav aria-label="Page navigation example">
-                                    {{ $car->links() }}
+                                    {{-- {{ $car->links() }} --}}
                                 </nav>
                             </div>
                             <!-- Page Pagination End -->

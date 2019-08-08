@@ -25,7 +25,18 @@
                 <div class="row">
                     <div class="col-lg-10 m-auto">
                         <div class="contact-form">
-                            <form action="index.html">
+                                {!! Form::open(['action' => 'MessageController@index', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                
+                                {{ Form::label('name', 'Name') }}
+                                {{ Form::text('name', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+            
+                                
+                                
+                                {{ Form::submit('Add Car', array('class' => 'btn btn-success btn-lg btn-block', 'style'=> 'margin-top:20px')) }}
+            
+            
+                            {!! Form::close() !!}
+                            {{-- <form action="index.html">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="name-input">
@@ -61,7 +72,7 @@
                                 <div class="input-submit">
                                     <button type="submit">Submit Message</button>
                                 </div>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
                 </div>
