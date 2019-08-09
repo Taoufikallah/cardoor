@@ -50,7 +50,7 @@
                         <!-- About Video Start -->
                         <div class="col-lg-6">
                             <div class="about-image">
-                                <img src="assets/img/home-2-about.png" alt="JSOFT">
+                                    <img src="{{ asset('storage/home-2-about.png')}}" alt="car">
                             </div>
                         </div>
                         <!-- About Video End -->
@@ -96,7 +96,7 @@
             <!--== About Page Content End ==-->
             
             <!--== Our Facility Content Start ==-->
-            <section id="our-facility" class="section-padding overlay">
+            {{-- <section id="our-facility" class="section-padding overlay">
                 <div class="container">
                     <div class="row">
                         <!-- Single Facility Start -->
@@ -160,7 +160,7 @@
                         <!-- Single Facility Start -->  
                     </div>
                 </div>
-            </section>
+            </section> --}}
             <!--== Our Facility Content End ==-->
         
             <!--== Partner Area Start ==-->
@@ -173,7 +173,7 @@
                                 <div class="single-partner">
                                     <div class="display-table">
                                         <div class="display-table-cell">
-                                            <img src="assets/img/partner/partner-logo-1.png" alt="JSOFT">
+                                            <img src="{{ asset('storage/partner/partner-logo-1.png')}}" alt="partner">
                                         </div>
                                     </div>
                                 </div>
@@ -183,7 +183,7 @@
                                 <div class="single-partner">
                                     <div class="display-table">
                                         <div class="display-table-cell">
-                                            <img src="assets/img/partner/partner-logo-2.png" alt="JSOFT">
+                                                <img src="{{ asset('storage/partner/partner-logo-2.png')}}" alt="partner">
                                         </div>
                                     </div>
                                 </div>
@@ -193,7 +193,7 @@
                                 <div class="single-partner">
                                     <div class="display-table">
                                         <div class="display-table-cell">
-                                            <img src="assets/img/partner/partner-logo-3.png" alt="JSOFT">
+                                            <img src="{{ asset('storage/partner/partner-logo-3.png')}}" alt="partner">
                                         </div>
                                     </div>
                                 </div>
@@ -203,7 +203,7 @@
                                 <div class="single-partner">
                                     <div class="display-table">
                                         <div class="display-table-cell">
-                                            <img src="assets/img/partner/partner-logo-4.png" alt="JSOFT">
+                                            <img src="{{ asset('storage/partner/partner-logo-4.png')}}" alt="partner">
                                         </div>
                                     </div>
                                 </div>
@@ -213,7 +213,7 @@
                                 <div class="single-partner">
                                     <div class="display-table">
                                         <div class="display-table-cell">
-                                            <img src="assets/img/partner/partner-logo-5.png" alt="JSOFT">
+                                            <img src="{{ asset('storage/partner/partner-logo-2.png')}}" alt="partner">
                                         </div>
                                     </div>
                                 </div>
@@ -223,7 +223,7 @@
                                 <div class="single-partner">
                                     <div class="display-table">
                                         <div class="display-table-cell">
-                                            <img src="assets/img/partner/partner-logo-1.png" alt="JSOFT">
+                                            <img src="{{ asset('storage/partner/partner-logo-4.png')}}" alt="partner">
                                         </div>
                                     </div>
                                 </div>
@@ -233,7 +233,7 @@
                                 <div class="single-partner">
                                     <div class="display-table">
                                         <div class="display-table-cell">
-                                            <img src="assets/img/partner/partner-logo-4.png" alt="JSOFT">
+                                            <img src="{{ asset('storage/partner/partner-logo-3.png')}}" alt="partner">
                                         </div>
                                     </div>
                                 </div>

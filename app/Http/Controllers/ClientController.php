@@ -14,6 +14,7 @@ class ClientController extends Controller
     public function index()
     {
         $client = Client::all();
+        
         return view('admin\clients\index', compact('client'));
     }
 
@@ -36,7 +37,31 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $this->validate($request, array(
+           'name' => 'required',
+           'email'=> 'required',
+           'phone'=> 'required',
+           'adress'=> 'required',
+           'city'=> 'required',
+           'age'=> 'required',
+           'license'=> 'required',
+       ));
+
+       
+
+       $client = new Client;
+       $client->name = $request->name;
+       $client->email = $request->email;
+       $client->phone = $request->phone;
+       $client->adress = $request->adress;
+       $client->city = $request->city;
+       $client->age = $request->age;
+       $client->license = $request->license;
+
+      
+       
+       $client->save();
+       return view('frontend\pages\index', compact('client'));
     }
 
     /**

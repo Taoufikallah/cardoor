@@ -41,7 +41,7 @@
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
                         <a href="/" class="logo">
-                            <img src="assets/img/logo.png" alt="JSOFT">
+                            <img src="{{ asset('storage/logo.png')}}" alt="JSOFT">
                         </a>
                     </div>
                     <!--== Logo End ==-->

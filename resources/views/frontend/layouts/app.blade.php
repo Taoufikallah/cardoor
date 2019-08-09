@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--=== Favicon ===-->
+        <link rel="shortcut icon" href="{{ asset('storage/favicon.ico')}}" type="image/x-icon" />
 
         <!--=== Bootstrap CSS ===-->
         <link href="{{asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -44,7 +46,7 @@
         @include('frontend/includes.footer')
         <!--== Scroll Top Area Start ==-->
         <div class="scroll-top">
-            <img src="assets/img/scroll-top.png" alt="JSOFT">
+                <img src="{{ asset('storage/scroll-top.png')}}" alt="JSOFT">
         </div>
         <!--== Scroll Top Area End ==-->
     

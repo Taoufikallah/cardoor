@@ -2218,7 +2218,8 @@ body,
 /*== Page Title CSS ==*/
 
 #page-title-area {
-	background-image: url("assets/img/page-title.jpg");
+	
+	background-image: url("/storage/page-title.jpg");
 	background-position: center center;
 	background-size: cover;
 	padding-top: 220px;
@@ -2261,7 +2262,7 @@ body,
 .car-list-thumb {
 	background-size: cover;
 	background-position: center center;
-	height: 200px;
+	/* height: 200px; */
 	max-height: 100%;
 }
 

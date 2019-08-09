@@ -28,7 +28,7 @@
                 <div class="car-details-content">
                     <h2>{{$car->title}} <span class="price">Rent: <b>{{$car->price}}DH</b></span></h2>
                     <div class="car-list-thumb car-thumb-1">
-                        <img style="width:100%" src="{{asset('app/cover_images/'.$car->cover_image)}}">
+                            <img style="" src="{{ asset('storage/'.$car->cover_image)}}">
                     </div>
                     <div class="car-details-info">
                         <h4>Additional Info</h4>
@@ -107,7 +107,7 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                            {!! Form::open(['action' => 'PagesController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                            {!! Form::open(['action' => 'ClientController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                             <div class="form-group">
                                 {{ Form::label('name', 'Name') }}
                                 {{ Form::text('name', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}

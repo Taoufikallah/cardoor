@@ -12,29 +12,12 @@ class MessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request){
-
-        $message = new Message;
-
-        $message->name = $request->name;
-        $message->phone = $request->phone;
-        $message->subject = $request->subject;
-        $message->message = $request->message;
-
-        $this->validate($request, array(
-           
-            'name' => 'required|max:255',
-            'phone'=> 'required',
-            'subject'=> 'required',
-            'message'=> 'required',
-            
-        ));
-
-        $message->save();
-
+    public function index()
+    {
         return view('frontend/pages.contact');
+
+
     }
-    
 
     /**
      * Show the form for creating a new resource.
@@ -43,8 +26,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        /* $message = Brand::all();
-        return view('frontend/pages.contact/create', compact('message')); */
+        //
     }
 
     /**
@@ -55,9 +37,10 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        $message = new Post;
+        $message = new Message;
 
         $message->name = $request->name;
+        $message->email = $request->email;
         $message->phone = $request->phone;
         $message->subject = $request->subject;
         $message->message = $request->message;
@@ -65,15 +48,15 @@ class MessageController extends Controller
         $this->validate($request, array(
            
             'name' => 'required|max:255',
+            'email'=> 'required',
             'phone'=> 'required',
             'subject'=> 'required',
             'message'=> 'required',
             
         ));
 
-        $car->save();
-
-        return redirect()->route('admin');
+        $message->save();
+        return view('frontend/pages.contact');
     }
 
     /**
@@ -84,7 +67,9 @@ class MessageController extends Controller
      */
     public function show($id)
     {
-        //
+        $message = Message::all();
+        
+        return view('admin/message', compact('message'));
     }
 
     /**

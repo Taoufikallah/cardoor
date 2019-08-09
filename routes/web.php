@@ -10,20 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// The All Route for Pages
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 Route::get('/cars', 'PagesController@car');
 
-
+// The All Route for Cars
 Route::get('/cars/{id}', 'PagesController@show')->name('frontend.post.show');
 Route::POST('cars/store/post', 'PagesController@store')->name('post.store');
-
 /* Route::get('/dashboard', 'CarfController@index');
  */
-
-
 
 Auth::routes();
 
@@ -47,9 +44,7 @@ Route::group(['middleware' => 'auth'], function(){
  // The All Route for Users
 Route::get('admin/user' ,'UserController@index');
 Route::get('admin/user/newEmail', 'UserController@newEmail')->name('newEmail');
-
 // The All Route for Cars
-
 Route::get('admin/cars', 'CarController@index')->name('admin');
 Route::get('admin/cars/create/post', 'CarController@create')->name('post.create');
 Route::POST('admin/cars/store/post', 'CarController@store')->name('post.store');
@@ -57,7 +52,6 @@ Route::get('admin/cars/show/post/{id}', 'CarController@show')->name('post.show')
 Route::get('admin/cars/edit/post/{id}', 'CarController@edit')->name('post.edit');
 Route::POST('admin/cars/update/post/{id}', 'CarController@update')->name('post.update');
 Route::POST('admin/cars/delete/post/{id}', 'CarController@destroy')->name('post.delete');
-
 // The All Route for brands
 Route::get('admin/brands', 'BrandController@index')->name('admin/brands');
 Route::get('admin/brands/create/brand', 'BrandController@create')->name('brand.create');
@@ -66,12 +60,8 @@ Route::get('admin/brands/show/brand/{id}', 'BrandController@show')->name('brand.
 Route::get('admin/brands/edit/brand/{id}', 'BrandController@edit')->name('brand.edit');
 Route::POST('admin/brands/update/brand/{id}', 'BrandController@update')->name('brand.update');
 Route::POST('admin/brands/delete/brand/{id}', 'BrandController@destroy')->name('brand.delete');
-
-
 // The All Route for Booking
 Route::get('admin/booking', 'BookingController@index')->name('booking');
-
-
 // The All Route for Clients
 Route::get('admin/clients', 'ClientController@index')->name('admin/clients');
 
@@ -80,16 +70,13 @@ Route::POST('frontned/pages/index', 'ClientController@store')->name('post.store'
 
 
 
-
-
-
-
-
 /* Route::get('admin/cars/store/post', 'CarController@store')->name('post.store');
  */
 Route::post('backend/cars/update', 'CarsController@update')->name('cars.update');
-
 Route::get('backend/cars/destroy/{id}', 'CarsController@destroy');
+// The All Route for Messages to Cardoor
+Route::post('admin/message', 'MessageController@show');
+Route::GET('/contact', 'MessageController@index');
+Route::POST('/contact', 'MessageController@store')->name('post.store');
 
 
-Route::get('/contact', 'MessageController@index');

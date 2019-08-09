@@ -25,10 +25,22 @@
                 <div class="row">
                     <div class="col-lg-10 m-auto">
                         <div class="contact-form">
-                                {!! Form::open(['action' => 'MessageController@index', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                                {!! Form::open(['action' => 'MessageController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                 
                                 {{ Form::label('name', 'Name') }}
                                 {{ Form::text('name', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+
+                                {{ Form::label('email', 'Email') }}
+                                {{ Form::text('email', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+
+                                {{ Form::label('phone', 'Phone') }}
+                                {{ Form::text('phone', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+
+                                {{ Form::label('subject', 'Subject') }}
+                                {{ Form::text('subject', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
+
+                                {{ Form::label('message', 'Message') }}
+                                {{ Form::text('message', NULL, array('class' => 'form-control' , 'required' => '', 'maxlength'=> '255')) }}
             
                                 
                                 
@@ -82,7 +94,7 @@
     
         <!--== Map Area Start ==-->
         <div class="maparea">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29213.038296132225!2d90.39150904197642!3d23.760577791538438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c783c3404f0d%3A0x76ae0d2edabc81df!2sHatir+Jheel!5e0!3m2!1sen!2sbd!4v1517941663187"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105884.88504844962!2d-6.927302610220097!3d33.96934138169133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b871f50c5c1%3A0x7ac946ed7408076b!2sRabat!5e0!3m2!1sen!2sma!4v1565360185533!5m2!1sen!2sma" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
         <!--== Map Area End ==-->
     

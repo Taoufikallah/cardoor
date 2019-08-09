@@ -76,8 +76,7 @@ class PagesController extends Controller
       
        
        $client->save();
-
-       return redirect()->route('frontend/pages/index');
+       return view('frontend\pages\index', compact('client'));
     }
 
 
@@ -89,6 +88,9 @@ class PagesController extends Controller
     }
     public function cars(){
         return view('frontend/pages.cars');
+    }
+    public function contact(){
+        return view('frontend/pages.contact');
     }
     
 }

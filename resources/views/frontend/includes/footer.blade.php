@@ -9,8 +9,7 @@
                             <div class="single-footer-widget">
                                 <h2>About Us</h2>
                                 <div class="widget-body">
-                                        
-                                    <img src="{{asset('assets/img/logo.png') }}" alt="JSOFT">
+                                    <img src="{{ asset('storage/logo.png')}}" alt="JSOFT">
                                     <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit. Nobis magni assumenda distinctio debitis, eum fuga fugiat error reiciendis.</p>
     
                                     <div class="newsletter-area">
