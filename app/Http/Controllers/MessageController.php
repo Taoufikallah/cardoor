@@ -15,8 +15,6 @@ class MessageController extends Controller
     public function index()
     {
         return view('frontend/pages.contact');
-
-
     }
 
     /**

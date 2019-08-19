@@ -15,6 +15,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 Route::get('/cars', 'PagesController@car');
+Route::get('/registerr', 'PagesController@registerr');
 
 // The All Route for Cars
 Route::get('/cars/{id}', 'PagesController@show')->name('frontend.post.show');
@@ -60,6 +61,7 @@ Route::get('admin/brands/show/brand/{id}', 'BrandController@show')->name('brand.
 Route::get('admin/brands/edit/brand/{id}', 'BrandController@edit')->name('brand.edit');
 Route::POST('admin/brands/update/brand/{id}', 'BrandController@update')->name('brand.update');
 Route::POST('admin/brands/delete/brand/{id}', 'BrandController@destroy')->name('brand.delete');
+
 // The All Route for Booking
 Route::get('admin/booking', 'BookingController@index')->name('booking');
 // The All Route for Clients
@@ -78,5 +80,15 @@ Route::get('backend/cars/destroy/{id}', 'CarsController@destroy');
 Route::post('admin/message', 'MessageController@show');
 Route::GET('/contact', 'MessageController@index');
 Route::POST('/contact', 'MessageController@store')->name('post.store');
+
+
+// The All Route for Clients
+Route::get('admin/clients', 'ClientController@index')->name('client');
+Route::get('admin/clients/create/client', 'ClientController@create')->name('client');
+Route::POST('admin/clients/store/client', 'ClientController@store')->name('client.store');
+Route::get('admin/clients/show/client/{id}', 'ClientController@show')->name('client.show');
+Route::get('admin/clients/edit/client/{id}', 'ClientController@edit')->name('client.edit');
+Route::POST('admin/clients/update/client/{id}', 'ClientController@update')->name('client.update');
+Route::POST('admin/clients/delete/client/{id}', 'ClientController@destroy')->name('client.delete');
 
 

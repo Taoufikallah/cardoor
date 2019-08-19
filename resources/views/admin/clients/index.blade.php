@@ -13,14 +13,8 @@
                     <thead>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Phone</th>
-                        <th>Adress</th>
-                        <th>City</th>
-                        <th>Post Code</th>
-                        <th>Country</th>
-                        <th>Age</th>
-                        <th>License</th>
-                        <th></th>
+                        <th>Username</th>
+                        <th>Create At</th>
                     </thead>
                     <tbody>
                         <?php $no=1 ?>
@@ -28,17 +22,14 @@
                             <tr>
                                 <td>{{ $value->name }}</td>
                                 <td>{{ $value->email }}</td>
-                                <td>{{ $value->phone }}</td>
-                                <td>{{ $value->adress }}</td>
-                                <td>{{ $value->city }}</td>
-                                <td>{{ $value->age }}</td>
-                                <td>{{ $value->license }}</td>
+                                <td>{{ $value->username }}</td>
+                                
                                 
                                 <td>{{ date(' M j Y', strtotime($value->created_at)) }}</td>
                                 
                                 <td>
-                                    <a href="{{ route('brand.show', $value->id) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open "></span></a>
-                                    <a href="{{ route('brand.edit', $value->id) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil "></span></a>
+                                    <a href="{{ route('client.show', $value->id) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open "></span></a>
+                                    <a href="{{ route('client.edit', $value->id) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil "></span></a>
                                      {!! Form::open(['method' => 'POST', 'route' => ['brand.delete',$value->id], 'style' => 'display:inline' ]) !!}
                                     {!! Form::button('', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm glyphicon glyphicon-trash ']) !!}
                                     {!! Form::close() !!}
@@ -47,6 +38,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                {{-- {{ $car->links() }} --}}
             </div>
         </div>
 

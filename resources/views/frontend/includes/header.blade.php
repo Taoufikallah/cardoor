@@ -20,13 +20,16 @@
 
                     <!--== Social Icons Start ==-->
                     <div class="col-lg-4 text-right">
-                            <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                        <a href="/registerr" class="register">Register</a>
+                        /
+                        <a href="/" class="login">Login</a>
                         {{-- <div class="header-social-icons">
                             <a href="#"><i class="fa fa-behance"></i></a>
                             <a href="#"><i class="fa fa-pinterest"></i></a>
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-linkedin"></i></a>
                         </div> --}}
+                        
                     </div>
                     <!--== Social Icons End ==-->
                 </div>

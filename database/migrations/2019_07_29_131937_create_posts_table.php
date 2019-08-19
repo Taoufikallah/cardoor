@@ -25,6 +25,7 @@ class CreatePostsTable extends Migration
             $table->string('number_doors');
             $table->string('number_places');
             $table->string('gearbox');
+            $table->string('cover_image');
             $table->integer('brand_id')->unsigned()->index()->nullable();
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->timestamps();

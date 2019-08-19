@@ -44,7 +44,7 @@ class BrandController extends Controller
         $brand->name = $request->name;
         $brand->save();
 
-       return redirect()->route('admin');
+       return redirect()->route('admin/brands');
     }
 
     /**
@@ -95,7 +95,7 @@ class BrandController extends Controller
 
         $brand->save();
 
-        return redirect()->route('admin');
+        return redirect()->route('admin/brands');
     }
 
     /**
@@ -106,6 +106,8 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $brand = Brand::find($id);
+        $brand->delete();
+        return redirect()->route('admin/brands');
     }
 }

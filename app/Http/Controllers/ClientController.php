@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\client;
+use App\Client;
+
 class ClientController extends Controller
 {
     /**
@@ -12,10 +13,10 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
         $client = Client::all();
-        
-        return view('admin\clients\index', compact('client'));
+        return view('admin/clients/index', compact('client'));
+        $client = Car::orderBy('title','asc')->paginate(2);
     }
 
     /**
@@ -38,13 +39,11 @@ class ClientController extends Controller
     public function store(Request $request)
     {
        $this->validate($request, array(
-           'name' => 'required',
+           'name'=> 'required',
            'email'=> 'required',
-           'phone'=> 'required',
-           'adress'=> 'required',
-           'city'=> 'required',
-           'age'=> 'required',
-           'license'=> 'required',
+           'username'=> 'required',
+           'password'=> 'required',
+
        ));
 
        
@@ -52,16 +51,12 @@ class ClientController extends Controller
        $client = new Client;
        $client->name = $request->name;
        $client->email = $request->email;
-       $client->phone = $request->phone;
-       $client->adress = $request->adress;
-       $client->city = $request->city;
-       $client->age = $request->age;
-       $client->license = $request->license;
-
+       $client->username = $request->username;
+       $client->password = $request->password;
       
        
        $client->save();
-       return view('frontend\pages\index', compact('client'));
+       return view('frontend/pages/registerr', compact('client'));
     }
 
     /**
@@ -72,7 +67,8 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        //
+        $client = Client::find($id);
+        return view('admin/clients/show', compact('client'));
     }
 
     /**
@@ -83,7 +79,8 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        //
+        $client = Client::find($id);
+        return view('admin/clients/edit', compact('client'));
     }
 
     /**
@@ -95,7 +92,25 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $client = Client::find($id);
+
+        $client->name = $request->name;
+        $client->email = $request->email;
+        $client->username = $request->username;
+        $client->password = $request->password;
+       
+
+        $this->validate($request, array(
+            'name'=> 'required',
+            'email'=> 'required',
+            'username'=> 'required',
+            'password'=> 'required',
+            
+        ));
+
+        $client->save();
+
+        return redirect()->route('/admin/client');
     }
 
     /**

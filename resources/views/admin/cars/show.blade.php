@@ -76,7 +76,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <a href="{{'admin/cars/'}}" class="btn btn-primary btn-block">See All Cars</a>
+                <a href="{{'/admin/cars/'}}" class="btn btn-primary btn-block">See All Cars</a>
             </div>
         </div>
     </div>

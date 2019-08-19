@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <a href="{{'admin/brands/'}}" class="btn btn-primary btn-block">See All Brands</a>
+                <a href="{{'/admin/brands/'}}" class="btn btn-primary btn-block">See All Brands</a>
             </div>
         </div>
     </div>
