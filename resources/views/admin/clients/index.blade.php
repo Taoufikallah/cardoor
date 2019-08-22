@@ -13,7 +13,6 @@
                     <thead>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Username</th>
                         <th>Create At</th>
                     </thead>
                     <tbody>
@@ -22,7 +21,6 @@
                             <tr>
                                 <td>{{ $value->name }}</td>
                                 <td>{{ $value->email }}</td>
-                                <td>{{ $value->username }}</td>
                                 
                                 
                                 <td>{{ date(' M j Y', strtotime($value->created_at)) }}</td>

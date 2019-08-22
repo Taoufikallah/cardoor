@@ -41,7 +41,6 @@ class ClientController extends Controller
        $this->validate($request, array(
            'name'=> 'required',
            'email'=> 'required',
-           'username'=> 'required',
            'password'=> 'required',
 
        ));
@@ -51,7 +50,6 @@ class ClientController extends Controller
        $client = new Client;
        $client->name = $request->name;
        $client->email = $request->email;
-       $client->username = $request->username;
        $client->password = $request->password;
       
        
