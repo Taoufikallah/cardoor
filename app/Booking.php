@@ -8,8 +8,13 @@ class Booking extends Model
 {
     protected $table="reserves";
 
+    // Primary Key
+    public $primaryKey = 'id';
+    // Timestamps
+    public $timestamps = true;
+
     public function posts() 
     {
-        return $this->hasMany(Post::class);
+        return $this->belongsTo(Post::class);
     }
 }

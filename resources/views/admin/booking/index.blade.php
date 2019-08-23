@@ -30,7 +30,7 @@
                         @foreach ($booking as $key => $value)
                             <tr>
                                 <th>{{ $no++ }}</th>
-                                <td>{{ $value->post_title}}</td>
+                                <td>{{ $value->post_id}}</td>
                                 <td>{{ $value->name }}</td>
                                 <td>{{ $value->email }}</td>
                                 <td>{{ $value->phone }}</td>

@@ -47,6 +47,7 @@ class BookingController extends Controller
         ));
 
         $booking = new Booking;
+        $booking->post_id = $request->post_id;
         $booking->name = $request->name;
         $booking->email = $request->email;
         $booking->phone = $request->phone;
@@ -57,7 +58,7 @@ class BookingController extends Controller
       
        
        $booking->save();
-       return view('frontend/pages/succes', compact('client'));
+       return view('/frontend/pages/succes');
     }
 
     /**

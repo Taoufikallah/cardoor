@@ -17,6 +17,7 @@ Route::get('/services', 'PagesController@services');
 Route::get('/cars', 'PagesController@car');
 Route::get('/booking', 'PagesController@booking');
 Route::get('/registerr', 'PagesController@registerr');
+Route::get('/succes', 'PagesController@succes');
 
 // The All Route for Cars
 Route::get('/cars/{id}', 'PagesController@show')->name('frontend.post.show');
@@ -65,7 +66,7 @@ Route::POST('admin/brands/delete/brand/{id}', 'BrandController@destroy')->name('
 
 // The All Route for Booking
 Route::get('admin/booking', 'BookingController@index')->name('booking');
-Route::get('admin/booking/create/booking', 'BookingController@create')->name('booking');
+/* Route::get('admin/booking/create/booking', 'BookingController@create')->name('booking'); */
 Route::POST('admin/booking/store/booking', 'BookingController@store')->name('booking.store');
 Route::get('admin/booking/show/booking/{id}', 'BookingController@show')->name('booking.show');
 Route::get('admin/booking/edit/booking/{id}', 'BookingController@edit')->name('booking.edit');
@@ -100,3 +101,7 @@ Route::POST('admin/clients/update/client/{id}', 'ClientController@update')->name
 Route::POST('admin/clients/delete/client/{id}', 'ClientController@destroy')->name('client.delete');
 
 
+Route::get('admin-login', 'Auth\AdminLoginController@showLoginForm');
+
+Route::post('admin-login', ['as'=>'admin-login','uses'=>'Auth\AdminLoginController@login']);
+Route::post('admin-register', ['as'=>'admin-login','uses'=>'Auth\AdminRegisterController@register']);

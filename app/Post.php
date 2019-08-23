@@ -17,4 +17,9 @@ class Post extends Model
     {
         return $this->belongsTo(Brand::class);
     }
+
+    public function booking()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

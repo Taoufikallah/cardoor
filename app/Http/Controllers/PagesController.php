@@ -98,5 +98,8 @@ class PagesController extends Controller
     public function registerr(){
         return view('frontend/pages.registerr');
     }
+    public function succes(){
+        return view('frontend/pages.succes');
+    }
     
 }
