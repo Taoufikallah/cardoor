@@ -92,6 +92,9 @@ class PagesController extends Controller
     public function contact(){
         return view('frontend/pages.contact');
     }
+    public function booking(){
+        return view('frontend/pages.booking');
+    }
     public function registerr(){
         return view('frontend/pages.registerr');
     }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Booking;
 class BookingController extends Controller
 {
     /**
@@ -13,6 +13,7 @@ class BookingController extends Controller
      */
     public function index()
     {
+        $booking = Booking::all();
         return view('admin\booking\index', compact('booking'));
     }
 
@@ -34,7 +35,29 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, array(
+            'name'=> 'required',
+            'email'=> 'required',
+            'phone'=> 'required',
+            'adress'=> 'required',
+            'city'=> 'required',
+            'age'=> 'required',
+            'license'=> 'required',
+ 
+        ));
+
+        $booking = new Booking;
+        $booking->name = $request->name;
+        $booking->email = $request->email;
+        $booking->phone = $request->phone;
+        $booking->adress = $request->adress;
+        $booking->city = $request->city;
+        $booking->age = $request->age;
+        $booking->license = $request->license;
+      
+       
+       $booking->save();
+       return view('frontend/pages/succes', compact('client'));
     }
 
     /**

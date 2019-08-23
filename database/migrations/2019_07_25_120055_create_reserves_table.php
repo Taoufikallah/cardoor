@@ -19,10 +19,14 @@ class CreateReservesTable extends Migration
             $table->foreign('post_id')->references('id')->on('reserves');
             $table->integer('post_id')->unsigned()->index()->nullable();
             $table->foreign('client_id')->references('id')->on('reserves');
-            $table->string('pickup_date');
-            $table->string('return_date');
-            $table->string('pickup_time');
-            $table->string('return_time');
+
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('adress');
+            $table->string('city');
+            $table->string('age');
+            $table->string('license');
             $table->timestamps();
         });
     }
