@@ -8,6 +8,11 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
+                   {{--  @if(auth)->user()->is_admin == 1)
+                        <a href="{{ url('admin/routes') }}">Admin</a>
+                    @else
+                        <div class="panel-heading">Normal User</div>
+                    @endif --}}
                         <form method="POST" action="{{ route('register') }}">
                                 @csrf
                         

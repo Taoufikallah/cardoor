@@ -27,6 +27,8 @@ Route::POST('cars/store/post', 'PagesController@store')->name('post.store');
 
 Auth::routes();
 
+/* Route::get('admin/admin', 'HomeController@admin')->middleware('admin'); */
+
 Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/admin', function(){
