@@ -27,9 +27,9 @@ Route::POST('cars/store/post', 'PagesController@store')->name('post.store');
 
 Auth::routes();
 
-/* Route::get('admin/admin', 'HomeController@admin')->middleware('admin'); */
+Route::get('/admin/routes', 'HomeController@admin')->middleware('admin');
 
-Route::group(['middleware' => 'auth'], function(){
+/* Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/admin', function(){
 
@@ -37,14 +37,13 @@ Route::group(['middleware' => 'auth'], function(){
 
     })->name('admin');;
 
-    Route::get('/admin', function(){
+    Route::get('/admin/routes', function(){
 
         return view('admin/admin');
 
     })->name('admin');
-});
-/* Route::get('/admin', 'HomeController@index'->('home');
- */
+}); */
+
 
  // The All Route for Users
 Route::get('admin/user' ,'UserController@index');
@@ -101,9 +100,3 @@ Route::get('admin/clients/show/client/{id}', 'ClientController@show')->name('cli
 Route::get('admin/clients/edit/client/{id}', 'ClientController@edit')->name('client.edit');
 Route::POST('admin/clients/update/client/{id}', 'ClientController@update')->name('client.update');
 Route::POST('admin/clients/delete/client/{id}', 'ClientController@destroy')->name('client.delete');
-
-
-Route::get('admin-login', 'Auth\AdminLoginController@showLoginForm');
-
-Route::post('admin-login', ['as'=>'admin-login','uses'=>'Auth\AdminLoginController@login']);
-Route::post('admin-register', ['as'=>'admin-login','uses'=>'Auth\AdminRegisterController@register']);

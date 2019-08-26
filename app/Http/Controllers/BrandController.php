@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\brand;
+use Auth;
+
 class BrandController extends Controller
 {
     /**
@@ -11,6 +13,11 @@ class BrandController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $brand = Brand::all();
@@ -42,6 +49,7 @@ class BrandController extends Controller
 
         $brand = new Brand;
         $brand->name = $request->name;
+        $brand->user_id = Auth::user()->id;
         $brand->save();
 
        return redirect()->route('admin/brands');

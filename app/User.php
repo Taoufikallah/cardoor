@@ -10,13 +10,15 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    /* protected $guard = 'admin'; */
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','is_admin',
+        'name', 'email', 'password','isAdmin',
     ];
 
     /**
