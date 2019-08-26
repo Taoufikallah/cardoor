@@ -27,8 +27,8 @@ Route::POST('cars/store/post', 'PagesController@store')->name('post.store');
 
 Auth::routes();
 
-/* Route::get('admin/admin', 'HomeController@admin')->middleware('admin'); */
-
+/* Route::get('/admin', 'HomeController@admin')->middleware('admin');
+ */
 Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/admin', function(){
@@ -48,6 +48,7 @@ Route::group(['middleware' => 'auth'], function(){
 
  // The All Route for Users
 Route::get('admin/user' ,'UserController@index');
+
 Route::get('admin/user/newEmail', 'UserController@newEmail')->name('newEmail');
 // The All Route for Cars
 Route::get('admin/cars', 'CarController@index')->name('admin');
