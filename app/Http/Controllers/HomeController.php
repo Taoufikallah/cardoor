@@ -29,4 +29,8 @@ class HomeController extends Controller
     {
     return view('/admin/admin');
     }
+    public function user()
+    {
+    return view('//');
+    }
 }
