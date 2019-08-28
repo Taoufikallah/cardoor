@@ -27,27 +27,27 @@ Route::POST('cars/store/post', 'PagesController@store')->name('post.store');
 
 Auth::routes();
 
-Route::get('/admin/routes', 'HomeController@admin')->middleware('admin');
-
+/* Route::get('/admin/routes', 'HomeController@admin')->middleware('admin');
+ */
 /* Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/admin', function(){
-
-        return view('admin');
-
-    })->name('admin');;
-
-    Route::get('/admin/routes', function(){
 
         return view('admin/admin');
 
     })->name('admin');
 }); */
+Route::get('/admin', function(){
 
+    return view('admin/admin');
+
+})->middleware(['auth', 'auth.admin']);
 
  // The All Route for Users
-Route::get('admin/user' ,'UserController@index');
-Route::get('admin/user/newEmail', 'UserController@newEmail')->name('newEmail');
+Route::resource('/admin/users','Admin\UserController', ['except' => ['show', 'create', 'store']]);
+
+/* Route::get('admin/user' ,'UserController@index');
+Route::get('admin/user/newEmail', 'UserController@newEmail')->name('newEmail'); */
 // The All Route for Cars
 Route::get('admin/cars', 'CarController@index')->name('admin');
 Route::get('admin/cars/create/post', 'CarController@create')->name('post.create');

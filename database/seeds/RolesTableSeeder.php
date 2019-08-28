@@ -3,13 +3,14 @@
 use Illuminate\Database\Seeder;
 use App\Role;
 
-class RolesTablesSeeder extends Seeder
+class RolesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      *
      * @return void
      */
+    
     public function run()
     {
         Role::truncate();

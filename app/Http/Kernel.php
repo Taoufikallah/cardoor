@@ -68,6 +68,7 @@ class Kernel extends HttpKernel
         'CheckAdmin' => \App\Http\Middleware\CheckAdminAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'admin' => \App\Http\Middleware\Admin::class,
+        'auth.admin' => \App\Http\Middleware\AccessAdmin::class,
     ];
 
     /**
