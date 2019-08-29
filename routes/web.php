@@ -27,8 +27,15 @@ Route::POST('cars/store/post', 'PagesController@store')->name('post.store');
 
 Auth::routes();
 
-/* Route::get('/admin/routes', 'HomeController@admin')->middleware('admin');
- */
+Route::get('/home', 'HomeController@index');
+
+Route::prefix('admin')->group(function(){
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+});
+
+
 /* Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/admin', function(){
@@ -37,15 +44,17 @@ Auth::routes();
 
     })->name('admin');
 }); */
-Route::get('/admin', function(){
+
+/* Route::get('/admin', function(){
 
     return view('admin/admin');
 
-})->middleware(['auth', 'auth.admin']);
+})->middleware(['auth', 'auth.admin']); */
+
 
  // The All Route for Users
-Route::resource('/admin/users','Admin\UserController', ['except' => ['show', 'create', 'store']]);
-
+/* Route::resource('/admin/users','Admin\UserController', ['except' => ['show', 'create', 'store']]);
+ */
 /* Route::get('admin/user' ,'UserController@index');
 Route::get('admin/user/newEmail', 'UserController@newEmail')->name('newEmail'); */
 // The All Route for Cars
@@ -84,8 +93,8 @@ Route::POST('frontned/pages/index', 'ClientController@store')->name('post.store'
 
 /* Route::get('admin/cars/store/post', 'CarController@store')->name('post.store');
  */
-Route::post('backend/cars/update', 'CarsController@update')->name('cars.update');
-Route::get('backend/cars/destroy/{id}', 'CarsController@destroy');
+    // Route::post('backend/cars/update', 'CarsController@update')->name('cars.update');
+    // Route::get('backend/cars/destroy/{id}', 'CarsController@destroy');
 // The All Route for Messages to Cardoor
 Route::post('admin/message', 'MessageController@show');
 Route::GET('/contact', 'MessageController@index');

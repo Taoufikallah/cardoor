@@ -9,4 +9,7 @@ class Role extends Model
     public function users(){
         return $this->belongsToMany('App\User');
     }
+    public function admins(){
+        return $this->belongsToMany('App\Admin');
+    }
 }
