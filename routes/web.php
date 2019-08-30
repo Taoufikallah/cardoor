@@ -16,6 +16,8 @@ Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 Route::get('/cars', 'PagesController@car');
 Route::get('/booking', 'PagesController@booking');
+/* Route::get('/loginn', 'PagesController@login');
+ */
 Route::get('/registerr', 'PagesController@registerr');
 Route::get('/succes', 'PagesController@succes');
 

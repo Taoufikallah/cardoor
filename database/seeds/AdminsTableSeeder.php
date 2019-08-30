@@ -20,9 +20,10 @@ class AdminsTableSeeder extends Seeder
         $admin = Admin::create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
-            'password' => bcrypt('admin'),
+            'email_verified_at' => 'admin@admin.com',
             /* 'isAdmin'=> 1 */
             'job_title' => 'developper',
+            'password' => bcrypt('admin'),
         ]);
 
         $admin->roles()->attach($adminRole);

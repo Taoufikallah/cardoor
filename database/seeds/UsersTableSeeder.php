@@ -16,15 +16,9 @@ class UsersTableSeeder extends Seeder
     {
         User::truncate();
 
-        $adminRole = Role::where('name','admin')->first();
         $userRole = Role::where('name','user')->first();
 
-        $admin = User::create([
-            'name' => 'Admin',
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('admin'),
-            'isAdmin'=> 1
-        ]);
+        
 
         $user = User::create([
             'name' => 'User',
@@ -32,7 +26,6 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('user')
         ]);
 
-        $admin->roles()->attach($adminRole);
         $user->roles()->attach($userRole);
     }
 
