@@ -11,14 +11,15 @@
 @section('body')
     <div class="login-box">
         <div class="login-logo">
-            <h2>User Loginhhhhhhhhhhhhhhhhhhhhhhhh</h2>
+            <h2>Admin Login</h2>
             <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
             
             <p class="login-box-msg">{{ trans('adminlte::adminlte.login_message') }}</p>
-            <form method="POST" action="{{ route('admin.login.submit') }}">
+            {{-- <form method="post" action="{{ route('admin.login.submit') }}"> --}}
+            <form action="{{ url(config('adminlte.login_url', 'admin.login.submit')) }}" method="post">
                 {!! csrf_field() !!}
 
                 <div class="form-group has-feedback {{ $errors->has('email') ? 'has-error' : '' }}">

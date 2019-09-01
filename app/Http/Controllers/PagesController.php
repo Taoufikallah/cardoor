@@ -95,6 +95,10 @@ class PagesController extends Controller
     public function booking(){
         return view('frontend/pages.booking');
     }
+    public function login(){
+        return view('frontend/pages.loginn');
+    }
+
     public function registerr(){
         return view('frontend/pages.registerr');
     }

@@ -12,7 +12,7 @@
         <div class="register-logo">
             <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
         </div>
-
+        <h2>register</h2>
         <div class="register-box-body">
             <p class="login-box-msg">{{ trans('adminlte::adminlte.register_message') }}</p>
             <form action="{{ url(config('adminlte.register_url', 'register')) }}" method="post">
