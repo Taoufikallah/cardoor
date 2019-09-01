@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\post;
 use App\brand;
+use Auth;
 use Storage;
 
 use Image;
@@ -16,9 +17,13 @@ class CarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        $car = Post::all();
+        $car = Post::where('user_id', Auth::user()->id)->get();
         /* dd($car);exit; */
         return view('admin\cars\index', compact('car'));
     }
@@ -109,6 +114,8 @@ class CarController extends Controller
        $car->brand_id = $request->brand_id;
        $car->cover_image = $fileNameToStore; */
        
+       $car->user_id = Auth::user()->id;
+
        $car->save();
 
        return redirect()->route('admin');

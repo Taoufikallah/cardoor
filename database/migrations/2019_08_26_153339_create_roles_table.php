@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBrandsTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateBrandsTable extends Migration
      */
     public function up()
     {
-        Schema::create('brands', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned()->index()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->Increments('id');
             $table->string('name');
             $table->timestamps();
         });
@@ -29,6 +27,6 @@ class CreateBrandsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brands');
+        Schema::dropIfExists('roles');
     }
 }

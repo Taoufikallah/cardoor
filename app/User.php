@@ -10,13 +10,15 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    /* protected $guard = 'admin'; */
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','is_admin',
+        'name', 'email', 'password','isAdmin',
     ];
 
     /**
@@ -36,4 +38,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roles(){
+        return $this->belongsToMany('App\Role');
+    }
 }
