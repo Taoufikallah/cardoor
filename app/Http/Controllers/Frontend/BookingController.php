@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\post;
+use App\brand;
 use Auth;
-use Illuminate\support\facades\Hash;
+use Storage;
 
-class UserController extends Controller
+use Image;
+
+class CarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,29 +19,12 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth');
     }
     
-    public function index()
-    {
-        $user = User::all();
-        return view('admin/users', compact('user'));
-    }
-
-    public function newEmail(Request $request)
-    {
-        $user = Auth::user();
-        $newEmail = $request->email;
-        $currentPassword = $request->currentPassword;
-
-        if (Hash::check($currentPassword, $user->password)){
-            $objuser = User::find(Auth::user()->id);
-            $objuser->email = $newEmail;
-            $objuser->save();
-            return back();
-        }else {
-            return back();
-        }
+    
+    public function index(){
+        return view('frontend/pages.booking');
     }
     /**
      * Show the form for creating a new resource.
@@ -47,7 +33,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -58,8 +44,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
+    
 
     /**
      * Display the specified resource.
@@ -69,7 +56,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -80,7 +67,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+       
     }
 
     /**
@@ -92,7 +79,8 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
+    
     }
 
     /**
@@ -103,6 +91,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

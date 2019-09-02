@@ -18,7 +18,7 @@
         <div class="login-box-body">
             
             <p class="login-box-msg">{{ trans('adminlte::adminlte.login_message') }}</p>
-            <form method="POST" action="{{ route('admin.login.submit') }}">
+            <form method="POST" action="{{ route('admin.login') }}">
                 {!! csrf_field() !!}
 
                 <div class="form-group has-feedback {{ $errors->has('email') ? 'has-error' : '' }}">

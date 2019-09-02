@@ -22,7 +22,7 @@
                     <div class="col-lg-4 text-right">
                         <a href="/registerr" class="register">Register</a>
                         /
-                        <a href="/" class="login">Login</a>
+                        <a href="/login2" class="login">Login</a>
                         {{-- <div class="header-social-icons">
                             <a href="#"><i class="fa fa-behance"></i></a>
                             <a href="#"><i class="fa fa-pinterest"></i></a>

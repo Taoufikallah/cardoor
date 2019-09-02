@@ -49,7 +49,7 @@
                                     @endif
                                 </td>
                                 {{-- <td > {{dd($value)}}</td> --}}
-                                <td><img style="width:100%" src="{{ asset('storage/'.$value->cover_image)}}"></td>
+                                <td><img style="width:100%" src="{{asset('app/cover_images/'.$value->cover_image)}}"></td>
                                 <td>{{ date(' M j Y', strtotime($value->created_at)) }}</td>
                                 
                                 <td>

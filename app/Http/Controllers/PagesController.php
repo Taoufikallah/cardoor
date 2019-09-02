@@ -9,6 +9,8 @@ use App\client
 ;
 class PagesController extends Controller
 {   
+    
+    
     public function index(Request $request){
         
         $qBrand = $request->get('q_brand');
@@ -92,11 +94,17 @@ class PagesController extends Controller
     public function contact(){
         return view('frontend/pages.contact');
     }
-    public function booking(){
+    /* public function booking(){
         return view('frontend/pages.booking');
-    }
+    } */
+    
+    /* public function __construct()
+    {
+        $this->middleware('auth');
+    } */
+
     public function login(){
-        return view('frontend/pages.loginn');
+        return view('frontend/pages.login2');
     }
 
     public function registerr(){

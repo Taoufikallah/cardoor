@@ -15,9 +15,9 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 Route::get('/cars', 'PagesController@car');
-Route::get('/booking', 'PagesController@booking');
-/* Route::get('/loginn', 'PagesController@login');
- */
+Route::get('/booking', 'Frontend\BookingController@index');
+
+Route::get('/login2', 'PagesController@login');
 Route::get('/registerr', 'PagesController@registerr');
 Route::get('/succes', 'PagesController@succes');
 
@@ -38,20 +38,6 @@ Route::prefix('cd-admin')->group(function(){
 });
 
 
-/* Route::group(['middleware' => 'auth'], function(){
-
-    Route::get('/admin', function(){
-
-        return view('admin/admin');
-
-    })->name('admin');
-}); */
-
-/* Route::get('/admin', function(){
-
-    return view('admin/admin');
-
-})->middleware(['auth', 'auth.admin']); */
 
 
  // The All Route for Users
@@ -76,16 +62,16 @@ Route::POST('cd-admin/brands/update/brand/{id}', 'BrandController@update')->name
 Route::POST('cd-admin/brands/delete/brand/{id}', 'BrandController@destroy')->name('brand.delete');
 
 // The All Route for Booking
-Route::get('admin/booking', 'BookingController@index')->name('booking');
+Route::get('cd-admin/booking', 'BookingController@index')->name('booking');
 /* Route::get('admin/booking/create/booking', 'BookingController@create')->name('booking'); */
-Route::POST('admin/booking/store/booking', 'BookingController@store')->name('booking.store');
-Route::get('admin/booking/show/booking/{id}', 'BookingController@show')->name('booking.show');
-Route::get('admin/booking/edit/booking/{id}', 'BookingController@edit')->name('booking.edit');
-Route::POST('admin/booking/update/booking/{id}', 'BookingController@update')->name('booking.update');
-Route::POST('admin/booking/delete/booking/{id}', 'BookingController@destroy')->name('booking.delete');
+Route::POST('cd-admin/booking/store/booking', 'BookingController@store')->name('booking.store');
+Route::get('cd-admin/booking/show/booking/{id}', 'BookingController@show')->name('booking.show');
+Route::get('cd-admin/booking/edit/booking/{id}', 'BookingController@edit')->name('booking.edit');
+Route::POST('cd-admin/booking/update/booking/{id}', 'BookingController@update')->name('booking.update');
+Route::POST('cd-admin/booking/delete/booking/{id}', 'BookingController@destroy')->name('booking.delete');
 
 // The All Route for Clients
-Route::get('admin/clients', 'ClientController@index')->name('admin/clients');
+Route::get('cd-admin/clients', 'ClientController@index')->name('admin/clients');
 
 Route::get('frontned/pages/index', 'ClientController@create')->name('client.create');
 Route::POST('frontned/pages/index', 'ClientController@store')->name('post.store');
@@ -103,10 +89,10 @@ Route::POST('/contact', 'MessageController@store')->name('post.store');
 
 
 // The All Route for Clients
-Route::get('admin/clients', 'ClientController@index')->name('client');
-Route::get('admin/clients/create/client', 'ClientController@create')->name('client');
-Route::POST('admin/clients/store/client', 'ClientController@store')->name('client.store');
-Route::get('admin/clients/show/client/{id}', 'ClientController@show')->name('client.show');
-Route::get('admin/clients/edit/client/{id}', 'ClientController@edit')->name('client.edit');
-Route::POST('admin/clients/update/client/{id}', 'ClientController@update')->name('client.update');
-Route::POST('admin/clients/delete/client/{id}', 'ClientController@destroy')->name('client.delete');
+Route::get('cd-admin/clients', 'ClientController@index')->name('client');
+Route::get('cd-admin/clients/create/client', 'ClientController@create')->name('client');
+Route::POST('cd-admin/clients/store/client', 'ClientController@store')->name('client.store');
+Route::get('cd-admin/clients/show/client/{id}', 'ClientController@show')->name('client.show');
+Route::get('cd-admin/clients/edit/client/{id}', 'ClientController@edit')->name('client.edit');
+Route::POST('cd-admin/clients/update/client/{id}', 'ClientController@update')->name('client.update');
+Route::POST('cd-admin/clients/delete/client/{id}', 'ClientController@destroy')->name('client.delete');

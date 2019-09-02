@@ -27,10 +27,11 @@
                 <div class="login-page-content">
                     
                     <div class="card">
-                        <div class="card-header">{{ __('Register') }}</div>
+                        <div class="card-header">{{ __('Login') }}</div>
         
                         <div class="card-body">
                             <form method="POST" action="{{ route('login') }}">
+                                
                                 @csrf
         
                                 <div class="form-group row">
