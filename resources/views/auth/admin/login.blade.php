@@ -1,9 +1,10 @@
 
-<div class="container">
+
+<div class="container" style="background-color:powderblue;padding:100px 100px;height:1000px ;">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <h2>Adminftgherhwrtyrtyrtyrtytryrttyty 123 Login</h2>
+            <div class="card" style="text-align:center">
+                <h2>Admin Login</h2>
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -70,3 +71,4 @@
         </div>
     </div>
 </div>
+

@@ -52,6 +52,7 @@
                                          
                                         <div class="single-car-wrap">
                                             <div class="car-list-thumb car-thumb-1">
+                                                
                                                     <img style="width:100%" src="{{ asset('storage/'.$value->cover_image)}}">
                                             </div>
                                             <div class="car-list-info without-bar">
